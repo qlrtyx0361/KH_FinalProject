@@ -1,12 +1,20 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <div class="header">
 	<div class="container-fluid px-md-5  pt-4 pt-md-5">
 		<div class="row justify-content-between">
 			<div class="col-md-8 order-md-last">
 				<div class="row">
 					<div class="col-md-6 text-center">
-						<a class="navbar-brand" href="index.html">Publishing <span>Company</span> <small>Book Publishing Company</small></a>
+					<div >
+					<img src="../images/로고.jpg" alt="로고">
+					</div>
+						<a class="navbar-brand" href="index.jsp" >책 사 <span>Book Maker</span> <small>책을 사랑하는 사람들</small></a>
+						
+						
 					</div>
 					<div class="col-md-6 d-md-flex justify-content-end mb-md-0 mb-3">
 						<form action="#" class="searchform order-lg-last">
@@ -38,7 +46,7 @@
 	    	<div class="collapse navbar-collapse" id="ftco-nav">
 		        <ul class="navbar-nav m-auto">
 		        	<li class="nav-item"><a href="#" class="nav-link">Home</a></li>
-		        	<li class="nav-item"><a href="#" class="nav-link">About</a></li>
+		        	<li class="nav-item"><a href="${pageContext.request.contextPath}/views/book/about.jsp" class="nav-link">About</a></li>
 		        	<li class="nav-item"><a href="#" class="nav-link">Coming Soon</a></li>
 		        	<li class="nav-item"><a href="#" class="nav-link">Top Seller</a></li>
 		        	<li class="nav-item active"><a href="#" class="nav-link">Books</a></li>
