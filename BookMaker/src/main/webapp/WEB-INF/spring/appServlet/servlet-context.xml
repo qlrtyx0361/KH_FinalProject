@@ -26,6 +26,18 @@
 		<!--  max 파일용량은 10MB이다.  -->
 	</beans:bean>
 	
+		<!-- @ResponseBody 사용을 위한 의존성 주입 -->
+	<beans:bean id="jacksonMessageConverter"
+		class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter" />
+	<beans:bean
+		class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter">
+		<beans:property name="messageConverters">
+			<beans:list>
+				<beans:ref bean="jacksonMessageConverter" />
+			</beans:list>
+		</beans:property>
+	</beans:bean>
+	
 	<context:component-scan base-package="com.kh.bookmaker" />
 	
 </beans:beans>

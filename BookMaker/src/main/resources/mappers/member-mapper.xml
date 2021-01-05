@@ -4,43 +4,43 @@
 <mapper namespace="memberMapper">
 
 	<resultMap id="resultMember" type="Member">
-		<result property="hobby" column="hobby" typeHandler="strArrTypeHandler" />
+		<!--  <result property="birth" column="BIRTH" typeHandler="strArrTypeHandler" /> -->
 	</resultMap>
 	
 	<insert id="insertMember" parameterType="Member">
-		INSERT INTO MEMBER VALUES (
-			DEFAULT,#{memberId}, #{password},DEFAULT, #{name}, 
+		INSERT INTO MEMBER VALUES ( MEMBERNO.NEXTVAL,
+			#{memberId}, #{password},DEFAULT, #{name}, 
 			#{address},#{tel},#{email}, 
-			#{birth},DEFAULT,DEFAULT,DEFAULT,#{emailIsok},DEFAULT
-		)
-	</insert>
+			#{birth},DEFAULT,DEFAULT,DEFAULT,
+			#{emailIsok},DEFAULT
+		) 
+	</insert>   
 	
 	<select id="loginMember" parameterType="string" resultMap="resultMember">
 		SELECT * FROM MEMBER 
-		WHERE USERID = #{userId}
+		WHERE MEMBERID = #{memberId}
 	</select>
 	
 	<update id="updateMember" parameterType="Member">
 		UPDATE MEMBER SET
-		 EMAIL = #{ email },
-		 USERNAME = #{ userName },
-		 AGE = #{ age }, 
-		 PHONE = #{ phone },
+		 NAME = #{ name }, 
 		 ADDRESS = #{ address },
-		 HOBBY = #{ hobby, typeHandler=strArrTypeHandler }
-		 WHERE USERID = #{ userId }
+		 TEL = #{ tel },
+		 EMAIL = #{ email },
+		 BIRTH = #{ birth },
+		 EMAILISOK = #{ emailIsok }
+		 WHERE MEMBERID = #{ memberId }
 	</update>
 	
 	<delete id="deleteMember" parameterType="string">
-		DELETE FROM MEMBER WHERE USERID = #{userId}
+		DELETE FROM MEMBER WHERE MEMBERID = #{memberId}
 	</delete>
 	
 	<select id="checkIdDuplicate" statementType="CALLABLE" parameterType="hashmap">
-	<!--  CallableStatement 는 { } 로 묶여 실행되며
-		    시작괄호 '{' 다음에 tab 기호를 읽지 못한다.  -->
-	{ CALL ID_DUP_CHK( #{userId, mode=IN, jdbcType=VARCHAR}, #{result, mode=OUT, jdbcType=NUMERIC, javaType=integer} ) }
+	
+	{ CALL ID_DUP_CHK( #{memberId, mode=IN, jdbcType=VARCHAR}, #{result, mode=OUT, jdbcType=NUMERIC, javaType=integer} ) }
 	</select>
-	<!-- jdbcType 참조 :  https://mybatis.org/mybatis-3/apidocs/reference/org/apache/ibatis/type/JdbcType.html -->
+
 	
 	
 	
