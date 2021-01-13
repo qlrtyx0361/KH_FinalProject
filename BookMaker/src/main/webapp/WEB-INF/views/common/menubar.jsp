@@ -25,24 +25,42 @@
 		
 		        		</form>
 		        		<div>
+		        		<!-- 로그인,회원가입 버튼 -->
 		        		<c:if test="${empty member}">
-		        <!-- 로그인,회원가입 버튼 -->
-		        <button class="btn btn-outline-success my-2 my-sm-0" type="button" data-toggle="modal" data-target="#loginModal">로그인</button>
-		        &nbsp;
-		        <button class="btn btn-outline-success my-2 my-sm-0" type="button" onclick="location.href='${pageContext.request.contextPath}/member/memberEnroll.do'">회원가입</button>
-		    </c:if>
-		    <c:if test="${!empty member}">
-		        <span><a href="${pageContext.request.contextPath}/member/memberView.do?memberId=${member.memberId}" title="내정보보기">${member.name}</a> 님, 안녕하세요</span>
-		        &nbsp;
-		        <button class="btn btn-outline-primary my-2 my-sm-0" type="button" 
-		                onclick="fn_chatting();">채팅하기</button>
-		        &nbsp;
-		        <button class="btn btn-outline-success my-2 my-sm-0" type="button" onclick="location.href='${pageContext.request.contextPath}/member/memberLogout.do'">로그아웃</button>
-		    </c:if>
-		    </div>
-		 </div>
+		     		   <button class="btn btn-outline-success my-2 my-sm-0" type="button" data-toggle="modal" data-target="#loginModal">로그인</button> &nbsp;
+		      		   <button class="btn btn-outline-success my-2 my-sm-0" type="button" onclick="location.href='${pageContext.request.contextPath}/member/memberEnroll.do'">회원가입</button>
+		     	       </c:if>
+		     	       
+		     	       <!-- 로그인 된 후  -->
+		  			  <c:if test="${!empty member}">
+		        	  <span><a href="${pageContext.request.contextPath}/member/memberView.do?memberId=${member.memberId}" title="내정보보기">${member.name}</a> 님</span>&nbsp;
+		       		  
+		       		  <button class="btn btn-outline-success my-2 my-sm-0" type="button" onclick="location.href='${pageContext.request.contextPath}/member/memberLogout.do'">로그아웃</button>
+		       		  
+		       		   
+		    		  </c:if>
+		    		  
+		      		  </div>
+		      		  
+		 		     <!-- 게시판 -->
+		 		     <div>
+		    		 <button class="btn btn-outline-success my-2 my-sm-0" type="button" onclick="location.href='${pageContext.request.contextPath}/inquiry/inquiryList.do'">문의 게시판</button>
+		  		     </div>
+		  		     	
+		  		     	<!-- FAQ 게시판 -->
+		  		      <div>
+		    		 <button class="btn btn-outline-success my-2 my-sm-0" type="button" onclick="location.href='${pageContext.request.contextPath}/Faq/Faq.do'">FAQ 게시판</button>
+		  		     </div>
+		  		     
+		  		      <!--  마이페이지 -->
+		  		      <div>
+		  		     
+		  		     <span><a class="btn btn-outline-success my-2 my-sm-0" href="${pageContext.request.contextPath}/member/memberView.do?memberId=${member.memberId}" >${member.name}님, 의 마이페이지</a></span>&nbsp;
+		  		     </div>
+		  		     
+		 			</div>
 		        		
-					</div>
+				</div>
 					
 				</div>
 			</div>

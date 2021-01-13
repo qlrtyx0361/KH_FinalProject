@@ -166,7 +166,10 @@
 					<input type="reset"  class="btn btn-outline-danger" value="취소">
 				</form>
 			</div>
-			<script>
+		</section>
+		<br /><br />
+		<c:import url="../common/footer.jsp"/>
+		<script>
 			$(function(){
 				
 				$("#password2").blur(function(){
@@ -178,7 +181,7 @@
 				});
 				
 				/* 아이디 중복검사 이벤트 추가 */
-				$("#userId_").on("keyup", function(){
+				$("#memberId").on("keyup", function(){
 			        var userId = $(this).val().trim();
 			        
 			        if(userId.length<4) {
@@ -191,7 +194,7 @@
 			        	
 				        $.ajax({
 				            url  : "${pageContext.request.contextPath}/member/checkIdDuplicate.do",
-				            data : {userId:userId},
+				            data : {memberId:userId},
 				            dataType: "json",
 				            success : function(data){
 				                console.log(data);
@@ -237,9 +240,6 @@
 				return true;
 			}
 			</script>
-		</section>
-		<br /><br />
-		<c:import url="../common/footer.jsp"/>
 	</div>
 </body>
 </html>

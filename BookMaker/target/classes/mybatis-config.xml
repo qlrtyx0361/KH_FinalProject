@@ -9,10 +9,11 @@
 
 	<typeAliases>
 		<typeAlias type="com.kh.bookmaker.member.model.vo.Member" alias="Member" />
-		<typeAlias type="com.kh.bookmaker.common.typeHandler.StringArrayTypeHandler" alias="strArrTypeHandler" />
+	<!-- 	<typeAlias type="com.kh.bookmaker.common.typeHandler.StringArrayTypeHandler" alias="strArrTypeHandler" /> -->
+
+		<typeAlias type="com.kh.bookmaker.inquiry.model.vo.Inquiry" alias="Inquiry" />
+		<typeAlias type="com.kh.bookmaker.inquiry.model.vo.InquiryFile" alias="InquiryFile" />
 		
-		<!-- <typeAlias type="com.kh.spring.board.model.vo.Board" alias="Board" />
-		<typeAlias type="com.kh.spring.board.model.vo.Attachment" alias="Attachment" /> -->
 	</typeAliases>
 
 
