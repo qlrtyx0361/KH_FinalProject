@@ -23,8 +23,8 @@ import com.kh.bookmaker.member.model.vo.Member;
 @Controller
 public class MemberController {
 
-	@Autowired
-	private BCryptPasswordEncoder bcryptPasswordEncoder;
+//	@Autowired
+//	private BCryptPasswordEncoder bcryptPasswordEncoder;
 
 	@Autowired
 	private MemberService memberService;
@@ -42,12 +42,12 @@ public class MemberController {
 
 		String plainPassword = member.getPassword();
 
-		String encryptPassword = bcryptPasswordEncoder.encode(plainPassword);
-
-		System.out.println("원문 : " + plainPassword);
-		System.out.println("암호문 : " + encryptPassword);
-
-		member.setPassword(encryptPassword);
+//		String encryptPassword = bcryptPasswordEncoder.encode(plainPassword);
+//
+//		System.out.println("원문 : " + plainPassword);
+//		System.out.println("암호문 : " + encryptPassword);
+//
+//		member.setPassword(encryptPassword);
 
 		try {
 			// 1. 서비스를 통한 비즈니스 로직 수행

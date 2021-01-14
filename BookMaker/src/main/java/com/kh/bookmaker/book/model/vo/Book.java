@@ -14,6 +14,7 @@ import lombok.ToString;
 @AllArgsConstructor
 public class Book {
 	private long isbn;
+	private int genreNo;
 	private String genreName;
 	private String bookName;
 	private String bookWriter;
@@ -26,4 +27,5 @@ public class Book {
 	private int bookWeight;
 	private String bookIntro;
 	private String bookWriterIntro;
+	private String fileName;
 }

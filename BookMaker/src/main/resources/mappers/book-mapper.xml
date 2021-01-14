@@ -4,12 +4,24 @@
 <mapper namespace="book">
 	
 	<select id="selectBookList" resultType="Book">
-		SELECT * FROM BOOK JOIN GENRE USING(GENRENO)
+		SELECT B.*, G.GENRENAME, BI.FILENAME FROM BOOK B 
+		JOIN GENRE G ON B.GENRENO = G.GENRENO
+		JOIN BOOKIMAGES BI ON B.ISBN = BI.ISBN AND BI.IMAGELEVEL = 0
 		ORDER BY BOOKPUBLICATIONDATE DESC, BOOKNAME ASC
 	</select>
 	
 	<select id="selectBookTotalContents" resultType="_int">
 		SELECT COUNT(*) FROM BOOK
 	</select>
-		
+	
+	<select id="selectBook" parameterType="_long" resultType="Book">
+		SELECT * FROM BOOK
+		JOIN GENRE USING(GENRENO)
+		WHERE ISBN = #{isbn}
+	</select>
+	
+	<select id="selectBookImageList" parameterType="_long" resultType="BookImage">
+		SELECT * FROM BOOKIMAGES WHERE ISBN = #{isbn} ORDER BY IMAGELEVEL ASC, IMAGENO ASC
+	</select>
+	
 </mapper>

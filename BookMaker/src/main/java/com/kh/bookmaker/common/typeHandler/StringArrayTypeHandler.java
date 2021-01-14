@@ -1,4 +1,4 @@
-package com.kh.spring.common.typeHandler;
+package com.kh.bookmaker.common.typeHandler;
 
 import java.sql.CallableStatement;
 import java.sql.PreparedStatement;

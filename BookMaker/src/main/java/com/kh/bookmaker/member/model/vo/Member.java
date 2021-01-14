@@ -27,10 +27,11 @@ public class Member implements Serializable {
 	private String address;
 	private String tel;
 	private String email;
-	private String birth;
+	private Date birth;
 	private Date joinDate;
 	private String status;
-	private String point;
-	private String emailIsok;
-	private String gradeType;
+	private int point;
+	private String emailIsOk;
+	private int gradeType;
+	private String gradeName;
 }

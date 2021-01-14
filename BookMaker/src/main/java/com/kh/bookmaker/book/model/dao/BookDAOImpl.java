@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.kh.bookmaker.book.model.vo.Book;
+import com.kh.bookmaker.book.model.vo.BookImage;
 
 @Repository
 public class BookDAOImpl implements BookDAO {
@@ -24,6 +25,16 @@ public class BookDAOImpl implements BookDAO {
 	@Override
 	public int selectBookTotalContents() {
 		return sqlSession.selectOne("book.selectBookTotalContents");
+	}
+
+	@Override
+	public Book selectBook(long isbn) {
+		return sqlSession.selectOne("book.selectBook", isbn);
+	}
+
+	@Override
+	public List<BookImage> selectBookImageList(long isbn) {
+		return sqlSession.selectList("book.selectBookImageList", isbn);
 	}
 
 }

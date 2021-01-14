@@ -1,4 +1,4 @@
-package com.kh.spring.common.exception;
+package com.kh.bookmaker.common.exception;
 
 public class BoardException extends RuntimeException {
 

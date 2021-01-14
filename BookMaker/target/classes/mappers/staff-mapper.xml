@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="staff">
+	
+	<select id="selectMemberList" resultType="Member">
+		SELECT * FROM MEMBER JOIN GRADE USING(GRADETYPE)
+		ORDER BY MEMBERNO DESC, NAME ASC
+	</select>
+	
+	<select id="selectMemberTotal" resultType="_int">
+		SELECT COUNT(*) FROM MEMBER
+	</select>
+	
+	<select id="selectMember" resultType="Member">
+		SELECT * FROM MEMBER JOIN GRADE USING(GRADETYPE)
+		WHERE MEMBERNO = #{memberNo}
+	</select>
+	
+	<select id="selectBookList" resultType="Book">
+		SELECT * FROM BOOK JOIN GENRE USING(GENRENO)
+		ORDER BY BOOKPUBLICATIONDATE DESC, BOOKNAME ASC
+	</select>
+	
+	<select id="selectBookTotal" resultType="_int">
+		SELECT COUNT(*) FROM BOOK
+	</select>
+	
+	<insert id="insertBook" parameterType="Book">
+		<selectKey keyProperty="genreNo" resultType="_int" order="BEFORE">
+			SELECT GENRENO FROM GENRE WHERE GENRENAME = #{genreName}
+		</selectKey>
+	
+		INSERT INTO BOOK VALUES(
+			#{isbn}, #{genreNo}, #{bookName}, #{bookWriter}, #{bookPublisher}, #{bookPublicationDate},
+			#{bookPrice}, #{bookSellPrice}, #{bookPoint}, #{bookPage}, #{bookWeight},
+			#{bookIntro}, #{bookWriterIntro}
+		)
+	</insert>
+	
+	<insert id="insertBookImage" parameterType="BookImage">
+		INSERT INTO BOOKIMAGES VALUES(
+			BOOKIMAGESSEQ.NEXTVAL, #{isbn}, #{fileName}, #{imageLevel}
+		)
+	</insert>
+	
+</mapper>

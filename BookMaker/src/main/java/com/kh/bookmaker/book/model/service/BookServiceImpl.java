@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.kh.bookmaker.book.model.dao.BookDAO;
 import com.kh.bookmaker.book.model.vo.Book;
+import com.kh.bookmaker.book.model.vo.BookImage;
 
 @Service
 public class BookServiceImpl implements BookService {
@@ -22,6 +23,16 @@ public class BookServiceImpl implements BookService {
 	@Override
 	public int selectBookTotalContents() {
 		return bookDAO.selectBookTotalContents();
+	}
+
+	@Override
+	public Book selectBook(long isbn) {
+		return bookDAO.selectBook(isbn);
+	}
+
+	@Override
+	public List<BookImage> selectBookImageList(long isbn) {
+		return bookDAO.selectBookImageList(isbn);
 	}
 
 }
