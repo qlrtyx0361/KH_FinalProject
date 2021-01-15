@@ -1,5 +1,6 @@
 package com.kh.bookmaker.staff.model.dao;
 
+import java.util.HashMap;
 import java.util.List;
 
 import org.apache.ibatis.session.RowBounds;
@@ -52,6 +53,36 @@ public class StaffDAOImpl implements StaffDAO {
 	@Override
 	public int insertBookImage(BookImage bookImage) {
 		return sqlSession.insert("staff.insertBookImage", bookImage);
+	}
+
+	@Override
+	public Book selectBook(long isbn) {
+		return sqlSession.selectOne("staff.selectBook", isbn);
+	}
+
+	@Override
+	public List<BookImage> selectBookImageList(long isbn) {
+		return sqlSession.selectList("staff.selectBookImageList", isbn);
+	}
+
+	@Override
+	public int deleteFile(int imgNo) {
+		return sqlSession.delete("staff.deleteFile", imgNo);
+	}
+
+	@Override
+	public int updateBook(HashMap<String, Object> map) {
+		return sqlSession.update("staff.updateBook", map);
+	}
+
+	@Override
+	public int deleteBook(long isbn) {
+		return sqlSession.delete("staff.deleteBook", isbn);
+	}
+
+	@Override
+	public int deleteBookImage(long isbn) {
+		return sqlSession.delete("staff.deleteBookImage", isbn);
 	}
 	
 	

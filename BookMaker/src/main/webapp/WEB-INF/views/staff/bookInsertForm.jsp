@@ -76,11 +76,11 @@
 					</tr>
 					<tr>
 						<td>도서 소개</td>
-						<td><textarea name="bookIntro" id="" cols="30" rows="10"></textarea></td>
+						<td><textarea name="bookIntro" id="" cols="80" rows="10"></textarea></td>
 					</tr>
 					<tr>
 						<td>저자 소개</td>
-						<td><textarea name="bookWriterIntro" id="" cols="30" rows="10"></textarea></td>
+						<td><textarea name="bookWriterIntro" id="" cols="80" rows="10"></textarea></td>
 					</tr>
 					<tr>
 						<td>대표 이미지</td>

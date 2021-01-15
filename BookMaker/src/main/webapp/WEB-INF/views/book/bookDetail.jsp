@@ -138,7 +138,6 @@
 		
 		$('#cartCount').on('change', function() {
 			if($(this).val() > 1) {
-				alert(${b.bookSellPrice} * $(this).val());
 				$('#totalDiv').css('display', 'inline');
 				$('#totalPrice').html(${b.bookSellPrice} * $(this).val());
 			} else {

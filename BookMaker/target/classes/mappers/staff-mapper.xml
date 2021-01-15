@@ -44,4 +44,36 @@
 		)
 	</insert>
 	
+	<select id="selectBook" parameterType="_long" resultType="Book">
+		SELECT * FROM BOOK JOIN GENRE USING(GENRENO) WHERE ISBN = #{isbn}
+	</select>
+	
+	<select id="selectBookImageList" parameterType="_long" resultType="BookImage">
+		SELECT * FROM BOOKIMAGES WHERE ISBN = #{isbn} ORDER BY IMAGELEVEL ASC
+	</select>
+	
+	<delete id="deleteFile" parameterType="_int">
+		DELETE FROM BOOKIMAGES WHERE IMAGENO = #{imgNo}
+	</delete>
+	
+	<update id="updateBook" parameterType="hashmap">
+		<selectKey keyProperty="genreNo" resultType="_int" order="BEFORE">
+			SELECT GENRENO FROM GENRE WHERE GENRENAME = #{b.genreName}
+		</selectKey>
+		
+		UPDATE BOOK SET GENRENO=#{genreNo}, BOOKNAME=#{b.bookName}, BOOKWRITER=#{b.bookWriter}, 
+		BOOKPUBLISHER=#{b.bookPublisher}, BOOKPUBLICATIONDATE=#{b.bookPublicationDate}, BOOKPRICE=#{b.bookPrice}, 
+		BOOKSELLPRICE=#{b.bookSellPrice}, BOOKPOINT=#{b.bookPoint}, BOOKPAGE=#{b.bookPage}, 
+		BOOKWEIGHT=#{b.bookWeight}, BOOKINTRO=#{b.bookIntro}, BOOKWRITERINTRO=#{b.bookWriterIntro}
+		WHERE ISBN=#{b.isbn}
+	</update>
+	
+	<delete id="deleteBook" parameterType="_long">
+		DELETE FROM BOOK WHERE ISBN=#{isbn}
+	</delete>
+	
+	<delete id="deleteBookImage" parameterType="_long">
+		DELETE FROM BOOKIMAGES WHERE ISBN=#{isbn}
+	</delete>
+	
 </mapper>

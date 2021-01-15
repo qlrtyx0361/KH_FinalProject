@@ -1,5 +1,6 @@
 package com.kh.bookmaker.staff.model.service;
 
+import java.util.HashMap;
 import java.util.List;
 
 import com.kh.bookmaker.book.model.vo.Book;
@@ -19,5 +20,15 @@ public interface StaffService {
 	int selectBookTotal();
 	
 	int insertBook(Book book, List<BookImage> bookImageList);
+	
+	Book selectBook(long isbn);
+	
+	List<BookImage> selectBookImageList(long isbn);
+	
+	int deleteFile(int imgNo);
+	
+	int updateBook(HashMap<String, Object> map, List<BookImage> bookImageList);
+	
+	int deleteBook(long isbn, String saveDirectory);
 	
 }

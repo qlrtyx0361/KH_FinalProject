@@ -7,7 +7,7 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<title>도서 등록</title>
+	<title>도서 수정</title>
 	<c:import url="../common/header.jsp"/>
 	<style>
 		textarea {
@@ -20,13 +20,14 @@
 	
 	<section class="container">
 		<article>
-			<form id="bookInsertFrm" action="${pageContext.request.contextPath}/staff/bookInsert.do" method="post" enctype="multipart/form-data">
+			<form id="bookUpdateFrm" action="${pageContext.request.contextPath}/staff/bookUpdate.do" method="post" enctype="multipart/form-data">
+				<input type="hidden" name="isbn" value="${b.isbn}"/>
 				<table>
 					<tr>
 						<td>도서 분류</td>
 						<td>
 							<select name="genreName" class="custom-select">
-								<option value="IT" selected>IT</option>
+								<option value="IT">IT</option>
 								<option value="소설">소설</option>
 								<option value="경제">경제</option>
 								<option value="자격증">자격증</option>
@@ -36,63 +37,87 @@
 					</tr>
 					<tr>
 						<td>도서명</td>
-						<td><input class="form-control-lg is-invalid" type="text" name="bookName" /></td>
+						<td class="rows"><input class="form-control-lg is-invalid col-12" type="text" name="bookName" value="${b.bookName}"/></td>
 					</tr>
 					<tr>
 						<td>저자</td>
-						<td><input class="form-control-lg is-invalid" type="text" name="bookWriter" /></td>
+						<td class="rows"><input class="form-control-lg is-invalid col-12" type="text" name="bookWriter" value="${b.bookWriter}"/></td>
 					</tr>
 					<tr>
 						<td>출판사</td>
-						<td><input class="form-control-lg is-invalid" type="text" name="bookPublisher" /></td>
+						<td class="rows"><input class="form-control-lg is-invalid col-12" type="text" name="bookPublisher" value="${b.bookPublisher}"/></td>
 					</tr>
 					<tr>
 						<td>정가</td>
-						<td><input class="form-control-lg is-invalid" type="number" name="bookPrice" /></td>
+						<td class="rows"><input class="form-control-lg is-invalid col-12" type="number" name="bookPrice" value="${b.bookPrice}"/></td>
 					</tr>
 					<tr>
 						<td>판매가</td>
-						<td><input class="form-control-lg is-invalid" type="number" name="bookSellPrice" /></td>
+						<td class="rows"><input class="form-control-lg is-invalid col-12" type="number" name="bookSellPrice" value="${b.bookSellPrice}"/></td>
 					</tr>
 					<tr>
 						<td>포인트</td>
-						<td><input class="form-control-lg is-invalid" type="number" name="bookPoint" /></td>
+						<td class="rows"><input class="form-control-lg is-invalid col-12" type="number" name="bookPoint" value="${b.bookPoint}"/></td>
 					</tr>
 					<tr>
 						<td>출간일</td>
-						<td><input class="form-control-lg is-invalid" type="date" name="bookPublicationDate" /></td>
+						<td class="rows"><input class="form-control-lg is-invalid col-12" type="date" name="bookPublicationDate" value="${b.bookPublicationDate}"/></td>
 					</tr>
 					<tr>
 						<td>페이지 수</td>
-						<td><input class="form-control-lg is-invalid" type="number" name="bookPage" /></td>
+						<td class="rows"><input class="form-control-lg is-invalid col-12" type="number" name="bookPage" value="${b.bookPage}"/></td>
 					</tr>
 					<tr>
 						<td>무게</td>
-						<td><input class="form-control-lg is-invalid" type="number" name="bookWeight" /></td>
+						<td class="rows"><input class="form-control-lg is-invalid col-12" type="number" name="bookWeight" value="${b.bookWeight}"/></td>
 					</tr>
 					<tr>
 						<td>ISBN</td>
-						<td><input class="form-control-lg is-invalid" type="number" name="isbn" /></td>
+						<td class="rows"><input class="form-control-lg is-invalid col-12" type="number" name="ISBN" value="${b.isbn}" disabled/></td>
 					</tr>
 					<tr>
 						<td>도서 소개</td>
-						<td><textarea name="bookIntro" id="" cols="30" rows="10"></textarea></td>
+						<td class="rows"><textarea name="bookIntro" id="" cols="80" rows="10">${b.bookIntro}</textarea></td>
 					</tr>
 					<tr>
 						<td>저자 소개</td>
-						<td><textarea name="bookWriterIntro" id="" cols="30" rows="10"></textarea></td>
+						<td class="rows"><textarea name="bookWriterIntro" id="" cols="80" rows="10">${b.bookWriterIntro}</textarea></td>
 					</tr>
 					<tr>
 						<td>대표 이미지</td>
-						<td><input type="file" name="upFile" /></td>
+						<td>
+							<div class="rows book-img">
+							<c:forEach items="${biList}" var="bi" varStatus="vs">
+								<c:if test="${bi.imageLevel eq 0}">
+								<button type="button" class="btn btn-outline-success col-8"
+										onclick="fileDownload('${bi.fileName}');" download>${bi.fileName}</button>
+								<button type="button" class="btn btn-outline-danger col-3"
+										onclick="fileDelete(this, '${bi.imageNo}', '${bi.fileName}');">파일 삭제</button>
+								</c:if>
+							</c:forEach>
+								<input type="file" name="upFile" />
+							</div>
+						</td>
 					</tr>
 					<tr>
 						<td>상세 이미지</td>
-						<td><input type="file" name="upFile" /></td>
+						<td>
+							<div class="rows book-img">
+							<c:forEach items="${biList}" var="bi" varStatus="vs">
+								<c:if test="${bi.imageLevel ne 0}">
+								<button type="button" class="btn btn-outline-success col-8"
+										onclick="fileDownload('${bi.fileName}');" download>${bi.fileName}</button>
+								<button type="button" class="btn btn-outline-danger col-3"
+										onclick="fileDelete(this, '${bi.imageNo}', '${bi.fileName}');">파일 삭제</button>
+								</c:if>
+							</c:forEach>
+								<input type="file" name="upFile" />
+							</div>
+						</td>
 					</tr>
 				</table>
 				
-				<button id="btnSubmit" class="btn btn-primary btn-lg">등록</button>&nbsp;
+				<button id="btnSubmit" class="btn btn-primary btn-lg">수정 완료</button>&nbsp;
 				<button class="btn btn-secondary btn-lg" onclick="history.go(-1); return false;">취소</button>
 			</form>
 		</article>
@@ -101,8 +126,52 @@
 	<c:import url="../common/footer.jsp"/>
 	
 	<script>
+		$(function() {
+			$('select option').each(function() {
+				if($(this).val() == '${b.genreName}') {
+					$(this).prop('selected', true);
+				} 
+			});
+
+			$('input[type=file]').each(function() {
+				$(this).css('display', 'none');
+			});
+
+			$('.book-img').each(function() {
+				if($(this).children().eq(0).attr('type') == 'file') {
+					$(this).children().eq(0).css('display', 'block');
+				}
+			});
+		});
+
+		function fileDownload(fileName){
+			fileName = encodeURIComponent(fileName);
+			location.href="${pageContext.request.contextPath}/staff/fileDownload.do?fileName=" + fileName;
+		}
+		
+		function fileDelete(obj, imgNo, fileName){
+			$.ajax({
+				url : '${pageContext.request.contextPath}/staff/fileDelete.do',
+				data : { imgNo : imgNo, fileName : fileName }, 
+				dataType : 'json',
+				success : function(data){
+					if(data == true) {
+						alert("첨부파일 삭제 완료!");
+						$(obj).next().css('display', 'block');
+						$(obj).parent().children('button').remove();
+					} else {
+						alert("첨부파일 삭제 실패!");
+					}
+				}, error : function(req, status, error){
+					console.log(req);
+					console.log(status);
+					console.log(error);
+				}
+			});
+		}
+	
 		$('#btnSubmit').on('click', function() {
-			$('#bookInsertFrm').submit();
+			$('#bookUpdateFrm').submit();
 		});
 	</script>
 </body>

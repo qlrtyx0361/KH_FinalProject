@@ -17,93 +17,121 @@
 </head>
 <body>
 	<c:import url="../common/menubar.jsp"/>
-	
 	<section class="container">
 		<article>
-			<form id="bookInsertFrm" action="${pageContext.request.contextPath}/staff/bookInsert.do" method="post" enctype="multipart/form-data">
-				<table>
-					<tr>
-						<td>도서 분류</td>
-						<td>
-							<select name="genreName" class="custom-select">
-								<option value="IT">IT</option>
-								<option value="소설">소설</option>
-								<option value="경제">경제</option>
-								<option value="자격증">자격증</option>
-								<option value="외국어">외국어</option>
-							</select>
-						</td>
-					</tr>
-					<tr>
-						<td>도서명</td>
-						<td><input class="form-control-lg is-invalid" type="text" name="bookName" value="${b.bookName}" disabled/></td>
-					</tr>
-					<tr>
-						<td>저자</td>
-						<td><input class="form-control-lg is-invalid" type="text" name="bookWriter" value="${b.bookWriter}" disabled/></td>
-					</tr>
-					<tr>
-						<td>출판사</td>
-						<td><input class="form-control-lg is-invalid" type="text" name="bookPublisher" /></td>
-					</tr>
-					<tr>
-						<td>정가</td>
-						<td><input class="form-control-lg is-invalid" type="number" name="bookPrice" /></td>
-					</tr>
-					<tr>
-						<td>판매가</td>
-						<td><input class="form-control-lg is-invalid" type="number" name="bookSellPrice" /></td>
-					</tr>
-					<tr>
-						<td>포인트</td>
-						<td><input class="form-control-lg is-invalid" type="number" name="bookPoint" /></td>
-					</tr>
-					<tr>
-						<td>출간일</td>
-						<td><input class="form-control-lg is-invalid" type="date" name="bookPublicationDate" /></td>
-					</tr>
-					<tr>
-						<td>페이지 수</td>
-						<td><input class="form-control-lg is-invalid" type="number" name="bookPage" /></td>
-					</tr>
-					<tr>
-						<td>무게</td>
-						<td><input class="form-control-lg is-invalid" type="number" name="bookWeight" /></td>
-					</tr>
-					<tr>
-						<td>ISBN</td>
-						<td><input class="form-control-lg is-invalid" type="number" name="isbn" /></td>
-					</tr>
-					<tr>
-						<td>도서 소개</td>
-						<td><textarea name="bookIntro" id="" cols="30" rows="10"></textarea></td>
-					</tr>
-					<tr>
-						<td>저자 소개</td>
-						<td><textarea name="bookWriterIntro" id="" cols="30" rows="10"></textarea></td>
-					</tr>
-					<tr>
-						<td>대표 이미지</td>
-						<td><input type="file" name="upFile" /></td>
-					</tr>
-					<tr>
-						<td>상세 이미지</td>
-						<td><input type="file" name="upFile" /></td>
-					</tr>
-				</table>
-				
-				<button id="btnSubmit" class="btn btn-primary btn-lg">등록</button>&nbsp;
-				<button class="btn btn-secondary btn-lg" onclick="history.go(-1); return false;">취소</button>
-			</form>
+			<table>
+				<tr>
+					<td>도서 분류</td>
+					<td>
+						<select name="genreName" class="custom-select" disabled>
+							<option value="IT">IT</option>
+							<option value="소설">소설</option>
+							<option value="경제">경제</option>
+							<option value="자격증">자격증</option>
+							<option value="외국어">외국어</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td>도서명</td>
+					<td><input class="form-control-lg is-invalid" type="text" name="bookName" value="${b.bookName}" disabled/></td>
+				</tr>
+				<tr>
+					<td>저자</td>
+					<td><input class="form-control-lg is-invalid" type="text" name="bookWriter" value="${b.bookWriter}" disabled/></td>
+				</tr>
+				<tr>
+					<td>출판사</td>
+					<td><input class="form-control-lg is-invalid" type="text" name="bookPublisher" value="${b.bookPublisher}" disabled/></td>
+				</tr>
+				<tr>
+					<td>정가</td>
+					<td><input class="form-control-lg is-invalid" type="number" name="bookPrice" value="${b.bookPrice}" disabled/></td>
+				</tr>
+				<tr>
+					<td>판매가</td>
+					<td><input class="form-control-lg is-invalid" type="number" name="bookSellPrice" value="${b.bookSellPrice}" disabled/></td>
+				</tr>
+				<tr>
+					<td>포인트</td>
+					<td><input class="form-control-lg is-invalid" type="number" name="bookPoint" value="${b.bookPoint}" disabled/></td>
+				</tr>
+				<tr>
+					<td>출간일</td>
+					<td><input class="form-control-lg is-invalid" type="date" name="bookPublicationDate" value="${b.bookPublicationDate}" disabled/></td>
+				</tr>
+				<tr>
+					<td>페이지 수</td>
+					<td><input class="form-control-lg is-invalid" type="number" name="bookPage" value="${b.bookPage}" disabled/></td>
+				</tr>
+				<tr>
+					<td>무게</td>
+					<td><input class="form-control-lg is-invalid" type="number" name="bookWeight" value="${b.bookWeight}" disabled/></td>
+				</tr>
+				<tr>
+					<td>ISBN</td>
+					<td><input class="form-control-lg is-invalid" type="number" name="isbn" value="${b.isbn}" disabled/></td>
+				</tr>
+				<tr>
+					<td>도서 소개</td>
+					<td><textarea name="bookIntro" id="" cols="80" rows="10" disabled>${b.bookIntro}</textarea></td>
+				</tr>
+				<tr>
+					<td>저자 소개</td>
+					<td><textarea name="bookWriterIntro" id="" cols="80" rows="10" disabled>${b.bookWriterIntro}</textarea></td>
+				</tr>
+				<tr>
+					<td>대표 이미지</td>
+					<td>
+						<c:forEach items="${biList}" var="bi">
+						<c:if test="${bi.imageLevel eq 0}">
+						<button type="button" class="btn btn-outline-success btn-block" 
+							onclick="fileDownload('${bi.fileName}');">${bi.fileName}</button>
+						</c:if>
+						</c:forEach>
+						
+					</td>
+				</tr>
+				<tr>
+					<td>상세 이미지</td>
+					<td>
+						<c:forEach items="${biList}" var="bi">
+						<c:if test="${bi.imageLevel ne 0}">
+						<button type="button" class="btn btn-outline-success btn-block">${bi.fileName}</button>
+						</c:if>
+						</c:forEach>
+					</td>
+				</tr>
+			</table>
+			
+			<button id="btnUpdate" class="btn btn-primary btn-lg">수정</button>&nbsp;
+			<button id="btnDelete" class="btn btn-danger btn-lg">삭제</button>
 		</article>
 	</section>
 	
 	<c:import url="../common/footer.jsp"/>
 	
 	<script>
-		$('#btnSubmit').on('click', function() {
-			$('#bookInsertFrm').submit();
+		$('#btnUpdate').on('click', function() {
+			location.href="${pageContext.request.contextPath}/staff/bookUpdateForm.do?isbn=${b.isbn}";
 		});
+
+		$('#btnDelete').on('click', function() {
+			location.href="${pageContext.request.contextPath}/staff/bookDelete.do?isbn=${b.isbn}";
+		});
+
+		$(function() {
+			$('select option').each(function() {
+				if($(this).val() == '${b.genreName}') {
+					$(this).prop('selected', true);
+				} 
+			})
+		});
+
+		function fileDownload(fileName){
+			fileName = encodeURIComponent(fileName);
+			location.href="${pageContext.request.contextPath}/staff/fileDownload.do?fileName=" + fileName;
+		}
 	</script>
 </body>
 </html>

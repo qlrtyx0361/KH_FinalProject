@@ -51,9 +51,9 @@
 		<script>
 			$(function(){
 				$("tr[id]").on("click", function(){
-					var bookNo = $(this).attr("id");
+					var isbn = $(this).attr("id");
 	
-					location.href = "${pageContext.request.contextPath}/staff/bookDetail.do?bookNo=" + bookNo;
+					location.href = "${pageContext.request.contextPath}/staff/bookDetail.do?isbn=" + isbn;
 				});
 	
 				$('tr>td').parent().on('mouseenter', function() {
