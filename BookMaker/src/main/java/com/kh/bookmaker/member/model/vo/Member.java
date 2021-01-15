@@ -25,7 +25,7 @@ public class Member implements Serializable {
 	private String memberType;
 	private String name;
 	private String address;
-	private String tel;
+	private int tel;
 	private String email;
 	private Date birth;
 	private Date joinDate;

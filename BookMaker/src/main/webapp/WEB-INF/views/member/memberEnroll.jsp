@@ -22,8 +22,9 @@
 	</style>
 </head>
 <body>
+<c:import url="../common/menubar.jsp"/><br /><br />
 	<div id="container">
-		<c:import url="../common/menubar.jsp"/>
+		
 		<section id="content">
 			<div id="enroll-container">
 				<form name="memberEnrollFrm" action="memberEnrollEnd.do" method="post" onsubmit="return fn_enroll_validate();" >
@@ -32,7 +33,7 @@
 							<th>아이디</th>
 							<td>
 								<div id="userId-container">
-									<input type="text" class="form-control" placeholder="4글자이상" name="userId" id="userId_" required>
+									<input type="text" class="form-control" placeholder="4글자이상" name="memberId" id="memberId" required>
 									<!-- 아이디중복검사 코멘트추가 -->
 									<span class="guide ok">사용 가능</span>
 				            		<span class="guide error">사용 불가</span>
@@ -42,15 +43,15 @@
 							</td>
 						</tr>
 						<tr>
-							<th>패스워드</th>
+							<th>비번</th>
 							<td>
-								<input type="password" class="form-control" name="password" id="password_" required>
+								<input type="password" class="form-control" name="password" id="password" required>
 							</td>
 						</tr>
 						<tr>
-							<th>패스워드확인</th>
+							<th>비번확&nbsp&nbsp인</th>
 							<td>	
-								<input type="password" class="form-control" id="password2" required>
+								<input type="password" class="form-control" id="password" required>
 							</td>
 						</tr>  
 						<tr>
@@ -62,7 +63,8 @@
 						<tr>
 							<th>주소</th>
 							<td>	
-								<input type="text" class="form-control" placeholder="" name="address" id="address">
+								<input type="text"  class="form-control" name="address" id="address" >
+   									<p>*주소는 (시/도)만 입력해주세요 (예: 경기도, 서울특별시, 경상남도 등)</p>
 							</td>
 						</tr>
 						<tr>
@@ -79,30 +81,95 @@
 							</td>
 						</tr>
 						<tr>
-							<th>생년월일</th>
+							<th>탄생일</th>
 							<td>	
-								<input type="birth" class="form-control" placeholder="abc@xyz.com" name="birth" id="birth">
+								 <select name="birthDay" id="birth1">
+							           <option value="2013">2013</option>
+							           <option value="2012">2012</option>
+							           <option value="2011">2011</option>
+							           <option value="2010">2010</option>
+							           <option value="2009">2009</option>
+							           <option value="2008">2008</option>
+							           <option value="2007">2007</option>
+							           <option value="2006">2006</option>
+							           <option value="2005">2005</option>
+							           <option value="2004">2004</option>
+							           <option value="2003">2003</option>
+							           <option value="2002">2002</option>
+							           <option value="2001">2001</option>
+							           <option value="2000">2000</option>
+							         </select>년
+							         <select name="birthDay" id="birth2">
+							           <option value="01">1</option>
+							           <option value="02">2</option>
+							           <option value="03">3</option>
+							           <option value="04">4</option>
+							           <option value="05">5</option>
+							           <option value="06">6</option>
+							           <option value="07">7</option>
+							           <option value="08">8</option>
+							           <option value="09">9</option>
+							           <option value="10">10</option>
+							           <option value="11">11</option>
+							           <option value="12">12</option>
+							         </select>월
+							         <select name="birthDay" id="birth3">
+							           <option value="01">1</option>
+							           <option value="02">2</option>
+							           <option value="03">3</option>
+							           <option value="04">4</option>
+							           <option value="05">5</option>
+							           <option value="06">6</option>
+							           <option value="07">7</option>
+							           <option value="08">8</option>
+							           <option value="09">9</option>
+							           <option value="10">10</option>
+							           <option value="11">11</option>
+							           <option value="12">12</option>
+							           <option value="13">13</option>
+							           <option value="14">14</option>
+							           <option value="15">15</option>
+							           <option value="16">16</option>
+							           <option value="17">17</option>
+							           <option value="18">18</option>
+							           <option value="19">19</option>
+							           <option value="20">20</option>
+							           <option value="21">21</option>
+							           <option value="22">22</option>
+							           <option value="23">23</option>
+							           <option value="24">24</option>
+							           <option value="25">25</option>
+							           <option value="26">26</option>
+							           <option value="27">27</option>
+							           <option value="28">28</option>
+							           <option value="29">29</option>
+							           <option value="30">30</option>
+							           <option value="31">31</option>
+							         </select>일
 							</td>
 						</tr>
 						
 						<tr>
-							<th>이메일 수신 여부 </th>
-							<td>
+							<th><br />이메일수신 </th>
+							<br />
+							<td>&nbsp&nbsp&nbsp;
 								<div class="form-check form-check-inline">
-									<input type="radio" class="form-check-input" name="emailIsok" id="emailIsok0" value="아니요" checked>
-									<label for="emailIsok0">아니요</label>
-									<input type="radio" class="form-check-input" name="gender" id="emailIsok1" value="예">
-									<label for="emailIsok1">예</label>
+									 <input type="radio" name="emailIsok" value="ok"> 수신함&nbsp&nbsp;
+   									 <input type="radio" name="emailIsok" value="no"> 수신거절
 								</div>
 							</td>
 						</tr>
 						
 					</table>
 					<input type="submit" class="btn btn-outline-success" value="가입" >
+					  <input type="reset"  class="btn btn-outline-success" value="다시입력">
 					<input type="reset"  class="btn btn-outline-danger" value="취소">
 				</form>
 			</div>
-			<script>
+		</section>
+		<br /><br />
+		<c:import url="../common/footer.jsp"/>
+		<script>
 			$(function(){
 				
 				$("#password2").blur(function(){
@@ -114,7 +181,7 @@
 				});
 				
 				/* 아이디 중복검사 이벤트 추가 */
-				$("#userId_").on("keyup", function(){
+				$("#memberId").on("keyup", function(){
 			        var userId = $(this).val().trim();
 			        
 			        if(userId.length<4) {
@@ -127,7 +194,7 @@
 			        	
 				        $.ajax({
 				            url  : "${pageContext.request.contextPath}/member/checkIdDuplicate.do",
-				            data : {userId:userId},
+				            data : {memberId:userId},
 				            dataType: "json",
 				            success : function(data){
 				                console.log(data);
@@ -173,8 +240,6 @@
 				return true;
 			}
 			</script>
-		</section>
-		<c:import url="../common/footer.jsp"/>
 	</div>
 </body>
 </html>
