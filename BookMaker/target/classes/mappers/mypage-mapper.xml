@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mypageMapper">
+
+	<resultMap id="resultMember" type="Member2">
+		<!--  <result property="birth" column="BIRTH" typeHandler="strArrTypeHandler" /> -->
+	</resultMap>
+
+
+<select id="mypageprof" parameterType="string" resultMap="resultMember">
+		SELECT * FROM MEMBER 
+		WHERE MEMBERID = #{memberId}
+</select>
+
+<!--  게시글 페이지 설정 -->
+	<select id="selectmypageList" resultType="Inquiry">
+		SELECT A.*, 
+		(SELECT COUNT(*) FROM INQUIRYFILE WHERE INQUIRYNO = A.INQUIRYNO) FILECOUNT
+		FROM INQUIRY A
+		WHERE MEMBERID = #{memberId}
+		ORDER BY UPLOADDATE DESC, INQUIRYNO DESC
+	
+	</select>
+	
+	<!-- 게시글 총 개수 -->
+	<select id="selectmypageTotalContents" resultType="_int">
+		SELECT COUNT(*) FROM INQUIRY
+	</select>
+
+
+
+
+
+
+
+
+
+
+
+</mapper>

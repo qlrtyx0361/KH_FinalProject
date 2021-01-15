@@ -22,9 +22,9 @@ public class MemberServiceImpl implements MemberService {
 	}
 
 	@Override
-	public Member selectOneMember(String userId) {
-		
-		return memberDAO.selectOneMember(userId);
+	public Member selectOneMember(String memberId) {
+	
+		return memberDAO.selectOneMember(memberId);
 	}
 
 	@Override
@@ -33,17 +33,17 @@ public class MemberServiceImpl implements MemberService {
 	}
 
 	@Override
-	public int checkIdDuplicate(String userId) {
+	public int checkIdDuplicate(String memberId) {
 		HashMap<String, Object> hmap = new HashMap<String, Object>();
-		hmap.put("userId", userId);
+		hmap.put("memberId", memberId);
 		 
 		return memberDAO.checkIdDuplicate(hmap);
 	}
 
 	@Override
-	public int deleteMember(String userId) {
+	public int deleteMember(String memberId) {
 		
-		return memberDAO.deleteMember(userId);
+		return memberDAO.deleteMember(memberId);
 	}
 
 }

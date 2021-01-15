@@ -22,9 +22,9 @@ public class MemberDAOImpl implements MemberDAO {
 	}
 
 	@Override
-	public Member selectOneMember(String userId) {
+	public Member selectOneMember(String memberId) {
 		
-		return sqlSession.selectOne("memberMapper.loginMember", userId);
+		return sqlSession.selectOne("memberMapper.loginMember", memberId);
 	}
 
 	@Override
@@ -33,9 +33,9 @@ public class MemberDAOImpl implements MemberDAO {
 	}
 
 	@Override
-	public int deleteMember(String userId) {
+	public int deleteMember(String memberId) {
 		
-		return sqlSession.delete("memberMapper.deleteMember", userId);
+		return sqlSession.delete("memberMapper.deleteMember", memberId);
 	}
 
 	@Override
