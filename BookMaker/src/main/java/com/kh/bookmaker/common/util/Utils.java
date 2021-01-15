@@ -6,7 +6,13 @@ import org.springframework.stereotype.Controller;
 @Controller
 public class Utils {
 	
-	public static String getPageBar(int totalContents, int cPage, int numPerPage, String url ){
+	// 원본용
+	public static String getPageBar(int totalContents, int cPage, int numPerPage, String url) {
+		return getPageBar(totalContents, cPage, numPerPage, url, null);
+	}
+	
+	// 마이페이지에서 해당 계정에 해당하는 게시글만 뽑아보기 할떄 
+	public static String getPageBar(int totalContents, int cPage, int numPerPage, String url, String memberId ){
 		String pageBar = "";
 		int pageBarSize = 5; // 1, 2, 3, 4, 5 --> 6, 7, 8, 9, 10
 		cPage = cPage==0?1:cPage;
@@ -68,7 +74,7 @@ public class Utils {
 		//fn_paging함수
 		pageBar += "<script>";
 		pageBar += "function fn_paging(cPage,numPerPage){";
-		pageBar += "location.href='"+url+"?cPage='+cPage;";
+		pageBar += "location.href='"+url+"?cPage='+cPage&memberId=" + memberId + ";";
 		pageBar += "}";
 		pageBar += "</script>";
 		

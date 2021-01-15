@@ -107,9 +107,11 @@ public class InquiryServiceImpl implements InquiryService {
 
 	@Override
 	public int deleteInquiry(int inquiryNo) {
-		// TODO Auto-generated method stub
-		return 0;
+		
+		return inquiryDAO.deleteInquiry(inquiryNo);
 	}
+
+
 
 	@Override
 	public int deleteFile(int attNo) {

@@ -51,7 +51,7 @@
 						<tr>
 							<th>비번확&nbsp&nbsp인</th>
 							<td>	
-								<input type="password" class="form-control" id="password2" required>
+								<input type="password" class="form-control" id="password" required>
 							</td>
 						</tr>  
 						<tr>

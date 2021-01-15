@@ -10,9 +10,13 @@
 	<typeAliases>
 		<typeAlias type="com.kh.bookmaker.member.model.vo.Member" alias="Member" />
 	<!-- 	<typeAlias type="com.kh.bookmaker.common.typeHandler.StringArrayTypeHandler" alias="strArrTypeHandler" /> -->
-
+		
+		<!-- 문의게시판 -->
 		<typeAlias type="com.kh.bookmaker.inquiry.model.vo.Inquiry" alias="Inquiry" />
 		<typeAlias type="com.kh.bookmaker.inquiry.model.vo.InquiryFile" alias="InquiryFile" />
+		<!-- 마이페이지 프로필 -->
+		<typeAlias type="com.kh.bookmaker.mypage.model.vo.Member" alias="Member2" />
+		
 		
 	</typeAliases>
 

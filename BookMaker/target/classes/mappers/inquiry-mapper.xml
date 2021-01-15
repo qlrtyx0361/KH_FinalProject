@@ -75,6 +75,11 @@
 		WHERE INQUIRYNO = #{inquiryno}
 	</delete>
 	
+	<delete id="deleteInquiry2" parameterType="_int">
+	DELETE FROM INQUIRY
+	WHERE INQUIRYNO = #{inquiryNo}
+</delete>
+	
 	
 </mapper>
 

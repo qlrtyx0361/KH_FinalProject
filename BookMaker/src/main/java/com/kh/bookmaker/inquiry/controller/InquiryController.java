@@ -1,6 +1,7 @@
 package com.kh.bookmaker.inquiry.controller;
 
 import java.io.BufferedInputStream;
+
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -26,6 +27,7 @@ import com.kh.bookmaker.common.util.Utils;
 import com.kh.bookmaker.inquiry.model.service.InquiryService;
 import com.kh.bookmaker.inquiry.model.vo.Inquiry;
 import com.kh.bookmaker.inquiry.model.vo.InquiryFile;
+
 
 
 
@@ -301,6 +303,40 @@ public class InquiryController {
 				msg = "게시글 수정 성공!";
 			} else {
 				msg = "게시글 수정 실패!";
+			}
+			
+			model.addAttribute("loc", loc);
+			model.addAttribute("msg", msg);
+			
+			return "common/msg";
+		}
+		
+		@RequestMapping("/inquiry/inquiryDelete.do")
+		public String inquiryDelete(@RequestParam int inquiryNo, 
+				                  HttpServletRequest req, Model model) {
+			
+			// 1. 파일이 저장된 폴더 경로
+			String saveDir = req.getServletContext().getRealPath("/resources/inquiryUpload");
+			
+			// 첨부파일 삭제 명단
+			List<InquiryFile> delList = inquiryService.selectinquiryfileList(inquiryNo);
+			
+			// 2. DB 정보 삭제하기
+			int result = inquiryService.deleteInquiry(inquiryNo);
+			
+			String loc = "/inquiry/inquiryList.do";
+			String msg = "";
+			
+			if ( result > 0 ) {
+				msg = "게시글 삭제 완료!";
+				
+				// 3. 실제 파일 지우기
+				for(InquiryFile a : delList) {
+					new File(saveDir + "/" + a.getRenameFilename()).delete();
+				}
+				
+			} else {
+				msg = "게시글 삭제 실패!";
 			}
 			
 			model.addAttribute("loc", loc);

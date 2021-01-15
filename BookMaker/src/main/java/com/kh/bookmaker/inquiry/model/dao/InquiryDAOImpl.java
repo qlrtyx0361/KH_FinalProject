@@ -108,7 +108,7 @@ public class InquiryDAOImpl implements InquiryDAO {
 	@Override
 	public int deleteInquiry(int inquiryNo) {
 		
-		return 0;
+		return sqlSession.delete("inquiryMapper.deleteInquiry2", inquiryNo);
 	}
 	
 

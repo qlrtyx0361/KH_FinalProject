@@ -10,7 +10,7 @@
 	<title>문의게시판</title>
 	<c:import url="../common/header.jsp"/>
 	<style>
-		/*글쓰기버튼*/
+	
 		input#btn-add{float:right; margin: 0 0 15px;}
 	</style>
 	
@@ -19,8 +19,8 @@
 	<div id="container">
 		<c:import url="../common/menubar.jsp"/>
 			<section id="inquiry-container" class="container">
-				<p>총 ${totalContents }건의 게시물이 있습니다.</p>
-				<input type="button" value="글쓰기" id="btn-add" class="btn btn-outline-success" onclick="fn_goInquiryForm();"/>
+				<p>총 ${totalContents }건의 게시물이 있습니다DFDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD.</p>
+
 				<table id="tbl-inquiry" class="table table-striped table-hover">
 					<tr>
 						<th>번호</th>
@@ -32,6 +32,7 @@
 						<th>조회수</th>
 					
 					</tr>
+					
 					<c:forEach items="${list}" var="b"> 
 					<tr id="${b.inquiryNo}">
 						<td>${b.inquiryNo}</td>
@@ -53,6 +54,7 @@
 						<td>${b.inquiryReadCount} </td>
 					</tr>
 					</c:forEach>
+					
 				</table>
 				<c:out value="${pageBar}" escapeXml="false"/>
 			</section> 

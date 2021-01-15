@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,14 +15,7 @@
     rel="stylesheet">
 
     <!-- Css Styles -->
-    <link rel="stylesheet" href="<%= request.getContextPath() %>/resources/css/bootstrap.min.css" type="text/css">
-    <link rel="stylesheet" href="<%= request.getContextPath() %>/resources/css/font-awesome.min.css" type="text/css">
-    <link rel="stylesheet" href="<%= request.getContextPath() %>/resources/css/elegant-icons.css" type="text/css">
-    <link rel="stylesheet" href="<%= request.getContextPath() %>/resources/css/plyr.css" type="text/css">
-    <link rel="stylesheet" href="<%= request.getContextPath() %>/resources/css/nice-select.css" type="text/css">
-    <link rel="stylesheet" href="<%= request.getContextPath() %>/resources/css/owl.carousel.min.css" type="text/css">
-    <link rel="stylesheet" href="<%= request.getContextPath() %>/resources/css/slicknav.min.css" type="text/css">
-    <link rel="stylesheet" href="<%= request.getContextPath() %>/resources/css/style.css" type="text/css">
+ 
 
 <style>
 body{background:#f4f4f4}
@@ -32,7 +28,7 @@ body{background:#f4f4f4}
 .accordion_area .content_area::before{color: black; display:inlnie;content:'A.'  } /* 눌렀을떄 A  */
 .accordion_area .content_area.act{color:black; display:block}/*  눌렀을떄 글씨색 */
 .active, .accordion_area:hover { background-color: teal; } /* 마우스 가져갔을때 */
-.accordion_area::after { content:  color: black; font-weight: bold; float: right; margin-left: 5px; font-size: 25px; }
+.accordion_area:after { content:  color: black; font-weight: bold; float: right; margin-left: 5px; font-size: 25px; }
 
  
 .accordion_area:focus,
@@ -87,10 +83,10 @@ color : gray;
 
 
 </style>
-<script src="../../resources/js/jquery-3.0.1.min.js"></script>
+
 </head>
 <body>
-<c:import url="views/common/header.jsp" />
+	<c:import url="../common/header.jsp"/>
    
 
    <h2 style="color:red;">FAQ</h2>
@@ -221,7 +217,7 @@ color : gray;
 
 
    
-<c:import url="views/common/footer.jsp" />
+<c:import url="../common/footer.jsp" />
 
 <script>
    $('.content').children().each(function() {
