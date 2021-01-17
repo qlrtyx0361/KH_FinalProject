@@ -104,8 +104,8 @@
 				</tr>
 			</table>
 			
-			<button id="btnUpdate" class="btn btn-primary btn-lg">수정</button>&nbsp;
-			<button id="btnDelete" class="btn btn-danger btn-lg">삭제</button>
+			<button type="button" id="btnUpdate" class="btn btn-primary btn-lg">수정</button>&nbsp;
+			<button type="button" id="btnDelete" class="btn btn-danger btn-lg">삭제</button>
 		</article>
 	</section>
 	
