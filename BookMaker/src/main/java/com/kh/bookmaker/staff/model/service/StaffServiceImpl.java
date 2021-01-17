@@ -107,6 +107,9 @@ public class StaffServiceImpl implements StaffService {
 		return result;
 	}
 
-	
-	
+	@Override
+	public int updateMemberType(int memberNo, String memberType) {
+		return staffDAO.updateMemberType(memberNo, memberType);
+	}
+
 }

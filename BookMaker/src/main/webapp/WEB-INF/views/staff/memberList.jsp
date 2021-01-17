@@ -31,13 +31,21 @@
 			</thead>
 			<tbody>
 				<c:forEach var="m" items="${list}">
+				<c:if test="${member.memberNo ne m.memberNo}">
 				<tr id="${m.memberNo}">
 					<td>${m.memberNo}</td>
 					<td>${m.memberId}</td>
 					<td>${m.name}</td>
-					<td>${m.memberType}</td>
+					<td>
+						<select>
+							<option value="MEMBER">MEMBER</option>
+							<option value="STAFF">STAFF</option>
+						</select>
+						<input type="hidden" value="${m.memberType}" />
+					</td>
 					<td>${m.gradeName}</td>
 				</tr>
+				</c:if>
 				</c:forEach>
 			</tbody>
 		</table>
@@ -47,20 +55,61 @@
 	<c:import url="../common/footer.jsp"/>
 	
 	<script>
-		$(function(){
-			$("tr[id]").on("click", function(){
-				var memberNo = $(this).attr("id");
+		$(function() {
+			alert('1234');
+			$('tr[id]').each(function() {
+				$(this).children().eq(1).on("click", function(){
+					var memberNo = $(this).parent().attr("id");
 
-				location.href = "${pageContext.request.contextPath}/staff/memberDetail.do?memberNo=" + memberNo;
+					location.href = "${pageContext.request.contextPath}/staff/memberDetail.do?memberNo=" + memberNo;
+				});
+			});
+
+			$('tr[id]').each(function() {
+				$(this).children().eq(1).on('mouseenter', function() {
+					$(this).css('cursor', 'pointer');
+				}).on('mouseleave', function() {
+					$(this).css('cursor', 'default');
+				});
 			});
 
 			$('tr>td').parent().on('mouseenter', function() {
-				$(this).css('cursor', 'pointer');
 				$(this).attr('class', 'table-active');
 			}).on('mouseleave', function() {
-				$(this).css('cursor', 'default');
 				$(this).removeAttr('class', 'table-active');
 			});
+
+			$('select').each(function() {
+				if($(this).next().val() == 'MEMBER') {
+					$(this).children().eq(0).attr('selected', 'selected');
+				} else {
+					$(this).children().eq(1).attr('selected', 'selected');
+				}
+			});
+		});
+
+		$('select').on('change', function() {
+			var memberNo = $(this).parent().parent().attr('id');
+			var memberType = $(this).children('option:selected').val();
+			
+			$.ajax({
+	            url  : "${pageContext.request.contextPath}/staff/updateMemberType.do",
+	            data : { memberNo : memberNo, memberType : memberType},
+	            dataType: "json",
+	            success : function(data){
+	                if (data == true) {
+		            	alert('등급 변경 성공');
+		            } else {
+			            alert('등급 변경 실패');
+			        }
+	            }, error : function(jqxhr, textStatus, errorThrown){
+	            	console.log("ajax 처리 실패");
+	                //에러로그
+	                console.log(jqxhr);
+	                console.log(textStatus);
+	                console.log(errorThrown);
+	            }
+        	});
 		});
 	</script>
 </body>

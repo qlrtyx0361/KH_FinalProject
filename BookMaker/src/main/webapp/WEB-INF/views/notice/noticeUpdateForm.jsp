@@ -17,6 +17,7 @@
 	
 	<section class="container">
 		<form id="noticeUpdateFrm" action="${pageContext.request.contextPath}/notice/noticeUpdate.do" method="post">
+			<input type="hidden" name="noticeNo" value="${n.noticeNo}"/>
 			<div class="row">
 				<label class="col-2">제목</label>
 				<input type="text" class="form-control col-10" placeholder="제목" name="noticeTitle" id="noticeTitle" value="${n.noticeTitle}" required/>

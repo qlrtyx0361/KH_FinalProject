@@ -38,7 +38,7 @@ public class NoticeDAOImpl implements NoticeDAO {
 
 	@Override
 	public int insertNotice(Notice notice) {
-		return sqlSession.insert("notcie.insertNotice", notice);
+		return sqlSession.insert("notice.insertNotice", notice);
 	}
 
 	@Override

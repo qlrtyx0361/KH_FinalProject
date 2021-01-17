@@ -296,6 +296,12 @@ public class StaffController {
 		return check;
 	}
 	
+	@ResponseBody
+	@RequestMapping("/staff/updateMemberType.do")
+	public boolean updateMemberType(@RequestParam int memberNo, @RequestParam String memberType) {
+		return staffService.updateMemberType(memberNo, memberType) != 0 ? true : false;
+	}
+	
 	public String fileNameChanger(String oldFileName) {
 		
 		String ext = oldFileName.substring(oldFileName.lastIndexOf(".") + 1);
