@@ -36,43 +36,43 @@
 					</tr>
 					<tr>
 						<td>도서명</td>
-						<td><input class="form-control-lg is-invalid" type="text" name="bookName" /></td>
+						<td><input class="form-control-lg is-invalid col-12" type="text" name="bookName" /></td>
 					</tr>
 					<tr>
 						<td>저자</td>
-						<td><input class="form-control-lg is-invalid" type="text" name="bookWriter" /></td>
+						<td><input class="form-control-lg is-invalid col-12" type="text" name="bookWriter" /></td>
 					</tr>
 					<tr>
 						<td>출판사</td>
-						<td><input class="form-control-lg is-invalid" type="text" name="bookPublisher" /></td>
+						<td><input class="form-control-lg is-invalid col-12" type="text" name="bookPublisher" /></td>
 					</tr>
 					<tr>
 						<td>정가</td>
-						<td><input class="form-control-lg is-invalid" type="number" name="bookPrice" /></td>
+						<td><input class="form-control-lg is-invalid col-12" type="number" name="bookPrice" /></td>
 					</tr>
 					<tr>
 						<td>판매가</td>
-						<td><input class="form-control-lg is-invalid" type="number" name="bookSellPrice" /></td>
+						<td><input class="form-control-lg is-invalid col-12" type="number" name="bookSellPrice" /></td>
 					</tr>
 					<tr>
 						<td>포인트</td>
-						<td><input class="form-control-lg is-invalid" type="number" name="bookPoint" /></td>
+						<td><input class="form-control-lg is-invalid col-12" type="number" name="bookPoint" /></td>
 					</tr>
 					<tr>
 						<td>출간일</td>
-						<td><input class="form-control-lg is-invalid" type="date" name="bookPublicationDate" /></td>
+						<td><input class="form-control-lg is-invalid col-12" type="date" name="bookPublicationDate" /></td>
 					</tr>
 					<tr>
 						<td>페이지 수</td>
-						<td><input class="form-control-lg is-invalid" type="number" name="bookPage" /></td>
+						<td><input class="form-control-lg is-invalid col-12" type="number" name="bookPage" /></td>
 					</tr>
 					<tr>
 						<td>무게</td>
-						<td><input class="form-control-lg is-invalid" type="number" name="bookWeight" /></td>
+						<td><input class="form-control-lg is-invalid col-12" type="number" name="bookWeight" /></td>
 					</tr>
 					<tr>
 						<td>ISBN</td>
-						<td><input class="form-control-lg is-invalid" type="number" name="isbn" /></td>
+						<td><input class="form-control-lg is-invalid col-12" type="number" name="isbn" /></td>
 					</tr>
 					<tr>
 						<td>도서 소개</td>

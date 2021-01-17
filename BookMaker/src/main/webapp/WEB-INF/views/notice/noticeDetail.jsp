@@ -37,7 +37,7 @@
 				<button class="btn btn-outline-info col-3" type="button" onclick="location.href='${pageContext.request.contextPath}/notice/noticeList.do'">리스트로</button>
 			    <c:if test="${member.memberNo eq n.memberNo}">
 			    &nbsp;
-				<button class="btn btn-outline-info col-3" type="button" onclick="location.href='${pageContext.request.contextPath}/notice/noticeUpdateView.do?noticeNo=${n.noticeNo}'">수정</button>
+				<button class="btn btn-outline-info col-3" type="button" onclick="location.href='${pageContext.request.contextPath}/notice/noticeUpdateForm.do?noticeNo=${n.noticeNo}'">수정</button>
 				&nbsp;
 				<button type="button" class="btn btn-danger col-3" onclick="location.href='${pageContext.request.contextPath}/notice/noticeDelete.do?noticeNo=${n.noticeNo}'">삭제</button>
 				</c:if>
