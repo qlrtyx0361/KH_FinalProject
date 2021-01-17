@@ -84,6 +84,14 @@ public class StaffDAOImpl implements StaffDAO {
 	public int deleteBookImage(long isbn) {
 		return sqlSession.delete("staff.deleteBookImage", isbn);
 	}
+
+	@Override
+	public int updateMemberType(int memberNo, String memberType) {
+		HashMap<String, Object> map = new HashMap<String, Object>();
+		map.put("memberNo", memberNo);
+		map.put("memberType", memberType);
+		return sqlSession.update("staff.updateMemberType", map);
+	}
 	
 	
 }

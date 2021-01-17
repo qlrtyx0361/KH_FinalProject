@@ -35,4 +35,6 @@ public interface StaffDAO {
 	
 	int deleteBookImage(long isbn);
 	
+	int updateMemberType(int memberNo, String memberType);
+	
 }

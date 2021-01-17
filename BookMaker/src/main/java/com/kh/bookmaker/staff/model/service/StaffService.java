@@ -31,4 +31,6 @@ public interface StaffService {
 	
 	int deleteBook(long isbn, String saveDirectory);
 	
+	int updateMemberType(int memberNo, String memberType);
+	
 }

@@ -76,4 +76,8 @@
 		DELETE FROM BOOKIMAGES WHERE ISBN=#{isbn}
 	</delete>
 	
+	<update id="updateMemberType" parameterType="hashmap">
+		UPDATE MEMBER SET MEMBERTYPE=#{memberType} WHERE MEMBERNO=#{memberNo}
+	</update>
+	
 </mapper>
