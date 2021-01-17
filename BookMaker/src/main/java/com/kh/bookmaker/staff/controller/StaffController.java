@@ -23,10 +23,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
-import com.kh.bookmaker.book.model.service.BookService;
-import com.kh.bookmaker.book.model.service.BookServiceImpl;
-import com.kh.bookmaker.book.model.vo.BookImage;
 import com.kh.bookmaker.book.model.vo.Book;
+import com.kh.bookmaker.book.model.vo.BookImage;
 import com.kh.bookmaker.common.util.Utils;
 import com.kh.bookmaker.member.model.vo.Member;
 import com.kh.bookmaker.staff.model.service.StaffService;

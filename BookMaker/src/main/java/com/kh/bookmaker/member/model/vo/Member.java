@@ -31,7 +31,7 @@ public class Member implements Serializable {
 	private Date joinDate;
 	private String status;
 	private int point;
-	private String emailIsOk;
+	private String emailIsok;
 	private int gradeType;
 	private String gradeName;
 }
