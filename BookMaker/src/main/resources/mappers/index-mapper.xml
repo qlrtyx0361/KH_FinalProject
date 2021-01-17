@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="index">
+	
+	<select id="selectBookList" resultType="Book">
+		SELECT B.*, G.GENRENAME, BI.FILENAME FROM BOOK B 
+		JOIN GENRE G ON B.GENRENO = G.GENRENO
+		JOIN BOOKIMAGES BI ON B.ISBN = BI.ISBN AND BI.IMAGELEVEL = 0
+		ORDER BY BOOKPUBLICATIONDATE DESC, BOOKNAME ASC
+	</select>
+	
+</mapper>

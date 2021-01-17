@@ -9,6 +9,11 @@
 	<meta charset="UTF-8">
 	<title>회원 관리</title>
 	<c:import url="../common/header.jsp"/>
+	<style>
+		table {
+			text-align: center;
+		}
+	</style>
 </head>
 <body>
 	<c:import url="../common/menubar.jsp"/>
@@ -17,10 +22,11 @@
 		<table class="table">
 			<thead class="thead-light">
 				<tr>
-					<th>No</th>
-					<th>아이디</th>
-					<th>이름</th>
-					<th>등급</th>
+					<th style="width: 10%;">No</th>
+					<th style="width: 30%;">아이디</th>
+					<th style="width: 20%;">이름</th>
+					<th style="width: 20%;">등급</th>
+					<th style="width: 20%;">멤버십 등급</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -29,6 +35,7 @@
 					<td>${m.memberNo}</td>
 					<td>${m.memberId}</td>
 					<td>${m.name}</td>
+					<td>${m.memberType}</td>
 					<td>${m.gradeName}</td>
 				</tr>
 				</c:forEach>

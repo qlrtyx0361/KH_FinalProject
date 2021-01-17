@@ -23,10 +23,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
-import com.kh.bookmaker.book.model.service.BookService;
-import com.kh.bookmaker.book.model.service.BookServiceImpl;
-import com.kh.bookmaker.book.model.vo.BookImage;
 import com.kh.bookmaker.book.model.vo.Book;
+import com.kh.bookmaker.book.model.vo.BookImage;
 import com.kh.bookmaker.common.util.Utils;
 import com.kh.bookmaker.member.model.vo.Member;
 import com.kh.bookmaker.staff.model.service.StaffService;
@@ -124,8 +122,7 @@ public class StaffController {
 			msg = "도서 등록 실패!";
 		}
 		
-		model.addAttribute("loc", loc);
-		model.addAttribute("msg", msg);
+		model.addAttribute("loc", loc).addAttribute("msg", msg);
 		
 		return "common/msg";
 	}
@@ -204,8 +201,7 @@ public class StaffController {
 			msg = "도서 수정 실패!";
 		}
 		
-		model.addAttribute("loc", loc);
-		model.addAttribute("msg", msg);
+		model.addAttribute("loc", loc).addAttribute("msg", msg);
 		
 		return "common/msg";
 	}
@@ -224,8 +220,7 @@ public class StaffController {
 			msg = "도서 삭제 실패!";
 		}
 		
-		model.addAttribute("loc", loc);
-		model.addAttribute("msg", msg);
+		model.addAttribute("loc", loc).addAttribute("msg", msg);
 		
 		return "common/msg";
 	}

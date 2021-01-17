@@ -7,7 +7,7 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<title>도서 관리</title>
+	<title>공지사항</title>
 	<c:import url="../common/header.jsp"/>
 	<style>
 		table {
@@ -22,26 +22,24 @@
 	
 	<section class="container">
 		<article>
-			<button class="btn btn-primary btn-lg float-right" id="btnNewBook">도서 등록</button><br/><br/>
+			<button class="btn btn-primary btn-lg float-right" id="btnNewNotice">공지 등록</button><br/><br/>
 			
 			<table class="table">
 				<thead class="thead-light">
 					<tr>
-						<th style="width: 10%;">도서분류</th>
-						<th style="width: 50%; overflow: hidden;">도서명</th>
-						<th style="width: 10%;">저자</th>
-						<th style="width: 10%;">출판사</th>
-						<th style="width: 10%;">가격</th>
+						<th style="width: 10%;">번호</th>
+						<th style="width: 60%;">제목</th>
+						<th style="width: 20%;">작성자</th>
+						<th style="width: 10%;">조회수</th>
 					</tr>
 				</thead>
 				<tbody>
-					<c:forEach var="b" items="${list}">
-					<tr id="${b.isbn}">
-						<td>${b.genreName}</td>
-						<td>${b.bookName}</td>
-						<td>${b.bookWriter}</td>
-						<td>${b.bookPublisher}</td>
-						<td>${b.bookPrice}</td>
+					<c:forEach var="n" items="${list}">
+					<tr id="${n.noticeNo}">
+						<td>${n.noticeNo}</td>
+						<td>${n.noticeTitle}</td>
+						<td>${n.memberId}</td>
+						<td>${n.noticeCount}</td>
 					</tr>
 					</c:forEach>
 				</tbody>
@@ -52,13 +50,13 @@
 	
 	<footer>
 		<c:import url="../common/footer.jsp"/>
-	
+		
 		<script>
 			$(function(){
 				$("tr[id]").on("click", function(){
-					var isbn = $(this).attr("id");
+					var noticeNo = $(this).attr("id");
 	
-					location.href = "${pageContext.request.contextPath}/staff/bookDetail.do?isbn=" + isbn;
+					location.href = "${pageContext.request.contextPath}/notice/noticeDetail.do?noticeNo=" + noticeNo;
 				});
 	
 				$('tr>td').parent().on('mouseenter', function() {
@@ -70,8 +68,8 @@
 				});
 			});
 
-			$('#btnNewBook').on('click', function() {
-				location.href = "${pageContext.request.contextPath}/staff/bookInsertForm.do";
+			$('#btnNewNotice').on('click', function() {
+				location.href = "${pageContext.request.contextPath}/notice/noticeInsertForm.do";
 			});
 		</script>
 	</footer>

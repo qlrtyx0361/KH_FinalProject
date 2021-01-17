@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="notice">
+	
+	<select id="selectNoticeList" resultType="Notice">
+		SELECT N.*, M.MEMBERID FROM NOTICE N
+		JOIN MEMBER M ON N.MEMBERNO = M.MEMBERNO
+		ORDER BY NOTICEDATE DESC
+	</select>
+	
+	<select id="selectNoticeTotal" resultType="_int">
+		SELECT COUNT(*) FROM NOTICE
+	</select>
+	
+	<select id="selectNotice" parameterType="_int" resultType="Notice">
+		SELECT N.*, M.MEMBERID FROM NOTICE N
+		JOIN MEMBER M ON N.MEMBERNO = M.MEMBERNO
+		WHERE N.NOTICENO = #{noticeNo}
+	</select>
+	
+	<update id="updateCount" parameterType="_int">
+		UPDATE NOTICE SET NOTICECOUNT=NOTICECOUNT+1 WHERE NOTICENO=#{noticeNo}
+	</update>
+	
+	<insert id="insertNotice" parameterType="Notice">
+		INSERT INTO NOTICE VALUES (NOTICESEQ.NEXTVAL, #{memberNo},
+		#{noticeTitle}, #{noticeContent}, DEFAULT, DEFAULT)
+	</insert>
+	
+	<update id="updateNotice" parameterType="Notice">
+		UPDATE NOTICE SET NOTICETITLE=#{noticeTitle}, NOTICECONTENT=#{noticeContent}
+		WHERE NOTICENO=#{noticeNo}
+	</update>
+	
+	<delete id="deleteNotice" parameterType="_int">
+		DELETE FROM NOTICE WHERE NOTICENO=#{noticeNo}
+	</delete>
+	
+</mapper>
