@@ -124,8 +124,7 @@ public class StaffController {
 			msg = "도서 등록 실패!";
 		}
 		
-		model.addAttribute("loc", loc);
-		model.addAttribute("msg", msg);
+		model.addAttribute("loc", loc).addAttribute("msg", msg);
 		
 		return "common/msg";
 	}
@@ -204,8 +203,7 @@ public class StaffController {
 			msg = "도서 수정 실패!";
 		}
 		
-		model.addAttribute("loc", loc);
-		model.addAttribute("msg", msg);
+		model.addAttribute("loc", loc).addAttribute("msg", msg);
 		
 		return "common/msg";
 	}
@@ -224,8 +222,7 @@ public class StaffController {
 			msg = "도서 삭제 실패!";
 		}
 		
-		model.addAttribute("loc", loc);
-		model.addAttribute("msg", msg);
+		model.addAttribute("loc", loc).addAttribute("msg", msg);
 		
 		return "common/msg";
 	}

@@ -12,6 +12,7 @@
 
 		<typeAlias type="com.kh.bookmaker.book.model.vo.Book" alias="Book" />
 		<typeAlias type="com.kh.bookmaker.book.model.vo.BookImage" alias="BookImage" />
+		<typeAlias type="com.kh.bookmaker.notice.model.vo.Notice" alias="Notice" />
 	<!-- 	<typeAlias type="com.kh.bookmaker.common.typeHandler.StringArrayTypeHandler" alias="strArrTypeHandler" /> -->
 		
 		<!-- 문의게시판 -->
