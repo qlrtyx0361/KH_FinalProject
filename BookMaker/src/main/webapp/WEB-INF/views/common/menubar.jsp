@@ -128,14 +128,15 @@
 	    	</button>
 	    	<div class="collapse navbar-collapse" id="ftco-nav">
 		        <ul class="navbar-nav m-auto">
-		        	<li class="nav-item"><a href="#" class="nav-link">Home</a></li>
-		        	<li class="nav-item"><a href="${pageContext.request.contextPath}/views/book/about.jsp" class="nav-link">About</a></li>
-		        	<li class="nav-item"><a href="#" class="nav-link">Coming Soon</a></li>
-		        	<li class="nav-item"><a href="#" class="nav-link">Top Seller</a></li>
-		        	<li class="nav-item active"><a href="#" class="nav-link">Books</a></li>
-		        	<li class="nav-item"><a href="#" class="nav-link">Author</a></li>
+		        	<li class="nav-item"><a href="${pageContext.request.contextPath}/" class="nav-link">Home</a></li>
+		        	<li class="nav-item"><a href="${pageContext.request.contextPath}/notice/noticeList.do" class="nav-link">Notice</a></li>
+		        	<li class="nav-item"><a href="${pageContext.request.contextPath}/book/bookList.do" class="nav-link">Books</a></li>
 		        	<li class="nav-item"><a href='${pageContext.request.contextPath}/inquiry/inquiryList.do' class="nav-link">문의 게시판</a></li>
 		        	<li class="nav-item"><a href='${pageContext.request.contextPath}/Faq/Faq.do' class="nav-link"> FAQ </a></li>
+		        	<c:if test="${member.memberType eq 'STAFF'}">
+		        	<li class="nav-item"><a href='${pageContext.request.contextPath}/staff/memberList.do' class="nav-link">Member</a></li>
+		        	<li class="nav-item"><a href='${pageContext.request.contextPath}/staff/bookList.do' class="nav-link">Staff-Books</a></li>
+		        	</c:if>
 		        </ul>
 			</div>
 		</div>
