@@ -32,8 +32,8 @@
 			SELECT INQUIRYSEQ.CURRVAL FROM DUAL
 		</selectKey>
 				
-		INSERT INTO INQUIRYFILE(INQUIRYFILENO, INQUIRYNO, INQUIRYFILENAME, RENAMEFILENAME)
-		VALUES (INQUIRYFILESEQ.NEXTVAL, #{inquiryNo}, #{inquiryFilename}, #{renameFilename})	
+		INSERT INTO INQUIRYFILE(INQUIRYFILENO, INQUIRYNO, INQUIRYANSWERNO, INQUIRYFILENAME, RENAMEFILENAME, MEMBERID)
+		VALUES (INQUIRYFILESEQ.NEXTVAL, #{inquiryNo},null,  #{inquiryFilename}, #{renameFilename},NULL)	
 	</insert>
 	
 	<!-- 게시글 선택시 해당게시글 정보 출력 -->
@@ -65,7 +65,7 @@
 	<!-- 게시글의 첨부파일 수정(INSERT) -->
 	<insert id="updateInquiryFile" parameterType="InquiryFile">
 		INSERT INTO INQUIRYFILE VALUES
-		(INQUIRYFILESEQ.NEXTVAL, #{inquiryNo}, #{inquiryFilename}, #{renameFilename})
+		(INQUIRYFILESEQ.NEXTVAL, #{inquiryNo}, null, #{inquiryFilename}, #{renameFilename})
 		
 	</insert>
 	
@@ -79,7 +79,40 @@
 	DELETE FROM INQUIRY
 	WHERE INQUIRYNO = #{inquiryNo}
 </delete>
+
+
+
+
+	<!--  게시글 답변 ( 글쓰기 )-->
+	<insert id="inquiryAnswer" parameterType="inquiryAnswer">
 	
+		INSERT INTO INQUIRYANSWER (INQUIRYANSWERNO, INQUIRYNO,INQUIRYANSWERCONTENT, UPLOADDATE, MEMBERID ,INQUIRYANSWERTITLE)
+		VALUES (INQUIRYANSWERSEQ.NEXTVAL,#{inquiryNo}, #{inquiryAnswerContent}, DEFAULT, #{memberId}, #{inquiryAnswerTitle})
+	</insert>
+	
+	<!-- 게시글 답변 첨부파일  -->
+	<insert id="inquiryAnswerFile" parameterType="a">
+		<!-- selectKey 기능 -->
+		<!-- 다른 테이블의 정보를 외래키로 가져올 경우 사용하는 기능 -->
+		<selectKey keyProperty="inquiryAnswerNo" resultType="_int" order="BEFORE">
+			SELECT INQUIRYANSWERSEQ.CURRVAL FROM DUAL
+		</selectKey>
+				
+		INSERT INTO INQUIRYANSWERFILE(inquiryAnswerFileNO, INQUIRYFILENAME, RENAMEFILENAME,MEMBERID,INQUIRYANSWERNO)
+		VALUES (INQUIRYANSWERFILESEQ.NEXTVAL, #{inquiryFilename}, #{renameFilename}, #{memberId}, #{inquiryAnswerNo})	
+	</insert>
+	
+	
+	
+		<!-- 답글보기 버튼 클릭시 답변보여지기 -->
+	<select id="answerView" parameterType="_int" resultType="InquiryAnswer">
+		SELECT * FROM INQUIRYANSWER WHERE INQUIRYNO = #{inquiryNo}
+	</select>
+	
+<!-- 	  답글보기 버튼 클릭시 답변에 대한 파일 보여지기 
+ 	<select id="answerViewfile" parameterType="String" resultType="InquiryFile">
+		SELECT * FROM INQUIRYFILE FROM INQUIRYANSWERNO WHERE MEMBERID = #{memberId}
+	</select> -->
 	
 </mapper>
 

@@ -10,6 +10,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.kh.bookmaker.inquiry.model.vo.Inquiry;
+import com.kh.bookmaker.inquiry.model.vo.InquiryAnswer;
+import com.kh.bookmaker.inquiry.model.vo.InquiryAnswerFile;
 import com.kh.bookmaker.inquiry.model.vo.InquiryFile;
 
 @Repository
@@ -110,6 +112,31 @@ public class InquiryDAOImpl implements InquiryDAO {
 		
 		return sqlSession.delete("inquiryMapper.deleteInquiry2", inquiryNo);
 	}
+
+	@Override
+	public int inquiryAnswerok(InquiryAnswer inquiryAnswer) {
+		
+		return sqlSession.insert("inquiryMapper.inquiryAnswer", inquiryAnswer);
+	}
+	
+
+	@Override
+	public InquiryAnswer answerView(int inquiryNo) {
+		
+		return sqlSession.selectOne("inquiryMapper.answerView", inquiryNo);
+	}
+
+	@Override
+	public int inquiryAnswerFile(InquiryAnswerFile a) {
+		
+		return sqlSession.insert("inquiryMapper.inquiryAnswerFile", a);
+	}
+
+	/*
+	 * @Override public List<InquiryFile> answerViewfile(String memberId) {
+	 * 
+	 * return sqlSession.selectList("inquiryMapper.answerViewfile", memberId); }
+	 */
 	
 
 

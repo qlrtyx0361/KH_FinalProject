@@ -15,9 +15,11 @@ import lombok.*;
 @AllArgsConstructor
 public class InquiryFile {
 	private int inquiryFileno;
+	private int inquiryAnswerNo;
 	private int inquiryNo;
 	private String inquiryFilename;
 	private String renameFilename;
+	
 
 	
 }

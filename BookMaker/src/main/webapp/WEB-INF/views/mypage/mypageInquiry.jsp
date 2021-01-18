@@ -12,14 +12,82 @@
 	<style>
 	
 		input#btn-add{float:right; margin: 0 0 15px;}
+		
+		
+		
+		
+			* {
+
+	font-family: 'Malgun gothic','Sans-Serif','Arial';
+}
+
+ul li {
+	list-style:none;
+}
+
+
+.list-table tbody td{
+	text-align:center;
+	padding:100px 0;
+	border-bottom:1px solid #CCC; height:20px;
+	font-size: 140px 
+}
+#btn-add {
+	text-decoration: none;
+	font-size: 20px;
+	font-weight: bold;
+	color:gray;
+	border-width:medium;
+	border-color: graytext;
+	
+}
+
+#aa{
+
+	text-decoration: none;
+	font-size: 20px;
+	font-weight: bold;
+	color:gray;
+	border-width:medium;
+	border-color: graytext;
+}
+
+.bb{
+	text-decoration: none;
+	font-size: 20px;
+	font-weight: bold;
+	color:gray;
+	border-width:thick;
+	border-color: blue;
+	
+	border-top:2px solid #09C;
+	border-bottom:2px solid #09C;
+
+}
+
+.cc{
+
+	text-decoration: none;
+	font-size: 20px;
+	font-weight: normal;
+	color:gray;
+	border-width:thick;
+	border-color: aqua;
+	
+	
+	border-bottom:2px solid ;
+
+
+}
 	</style>
 	
 </head>
 <body>
 	<div id="container">
 		<c:import url="../common/menubar.jsp"/>
+		<br /><br />
 			<section id="inquiry-container" class="container">
-				<p>총 ${totalContents }건의 게시물이 있습니다DFDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD.</p>
+				<p>총 ${totalContents }건의 게시물이 있습니다.</p>
 
 				<table id="tbl-inquiry" class="table table-striped table-hover">
 					<tr>

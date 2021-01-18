@@ -19,6 +19,41 @@
 		div#userId-container span.guide {display:none;font-size: 12px;position:absolute; top:12px; right:10px;}
 		div#userId-container span.ok{color:green;}
 		div#userId-container span.error, span.invalid{color:red;}
+		td##enroll-container input, div#enroll-container select {margin-bottom:10px;}
+		
+		
+		    <style>
+
+
+body {
+  background-image: #34495e;
+}
+
+.btn {
+  position:relative;
+  left:40%;
+  transform: translateX(-50%);
+  margin-bottom: 40px;
+  width:80%;
+  height:40px;
+  background: linear-gradient(125deg,#81ecec,#6c5ce7,#81ecec);
+  background-position: left;
+  background-size: 200%;
+  color:white;
+  font-weight: bold;
+  border:none;
+  cursor:pointer;
+  transition: 0.4s;
+  display:inline;
+}
+
+.btn:hover {
+  background-position: right;
+}
+
+.bottomText {
+  text-align: center;
+}
 	</style>
 </head>
 <body>
@@ -31,7 +66,7 @@
 					<table>
 						<tr>
 							<th>아이디</th>
-							<td>
+							<td >
 								<div id="userId-container">
 									<input type="text" class="form-control" placeholder="4글자이상" name="memberId" id="memberId" required>
 									<!-- 아이디중복검사 코멘트추가 -->
@@ -44,7 +79,7 @@
 						</tr>
 						<tr>
 							<th>비번</th>
-							<td>
+							<td >
 								<input type="password" class="form-control" name="password" id="password" required>
 							</td>
 						</tr>
@@ -56,7 +91,7 @@
 						</tr>  
 						<tr>
 							<th>이름</th>
-							<td>	
+							<td >	
 							<input type="text" class="form-control" name="name" id="name" required>
 							</td>
 						</tr>
@@ -163,7 +198,7 @@
 					</table>
 					<input type="submit" class="btn btn-outline-success" value="가입" >
 					  <input type="reset"  class="btn btn-outline-success" value="다시입력">
-					<input type="reset"  class="btn btn-outline-danger" value="취소">
+				
 				</form>
 			</div>
 		</section>

@@ -18,6 +18,10 @@
 		<!-- 문의게시판 -->
 		<typeAlias type="com.kh.bookmaker.inquiry.model.vo.Inquiry" alias="Inquiry" />
 		<typeAlias type="com.kh.bookmaker.inquiry.model.vo.InquiryFile" alias="InquiryFile" />
+		<!-- 문의 답변 -->
+		<typeAlias type="com.kh.bookmaker.inquiry.model.vo.InquiryAnswer" alias="InquiryAnswer" />
+		<typeAlias type="com.kh.bookmaker.inquiry.model.vo.InquiryAnswerFile" alias="InquiryAnswerFile" />
+		
 		<!-- 마이페이지 프로필 -->
 		<typeAlias type="com.kh.bookmaker.mypage.model.vo.Member" alias="Member2" />
 		

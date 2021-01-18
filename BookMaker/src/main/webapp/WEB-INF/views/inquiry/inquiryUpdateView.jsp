@@ -14,6 +14,37 @@
 		div#inquiry-container input{margin-bottom:15px;}
 		/* 부트스트랩 : 파일라벨명 정렬*/
 		div#inquiry-container label.custom-file-label{text-align:left;}
+		
+		
+		body {
+  background-image: #34495e;
+}
+
+.btn {
+  position:relative;
+  left:40%;
+  transform: translateX(-50%);
+  margin-bottom: 40px;
+  width:80%;
+  height:40px;
+  background: linear-gradient(125deg,#81ecec,#6c5ce7,#81ecec);
+  background-position: left;
+  background-size: 200%;
+  color:white;
+  font-weight: bold;
+  border:none;
+  cursor:pointer;
+  transition: 0.4s;
+  display:inline;
+}
+
+.btn:hover {
+  background-position: right;
+}
+
+.bottomText {
+  text-align: center;
+}
 	</style>
 
 </head>

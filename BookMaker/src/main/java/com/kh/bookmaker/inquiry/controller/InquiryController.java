@@ -1,7 +1,6 @@
 package com.kh.bookmaker.inquiry.controller;
 
 import java.io.BufferedInputStream;
-
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -26,15 +25,9 @@ import org.springframework.web.multipart.MultipartFile;
 import com.kh.bookmaker.common.util.Utils;
 import com.kh.bookmaker.inquiry.model.service.InquiryService;
 import com.kh.bookmaker.inquiry.model.vo.Inquiry;
+import com.kh.bookmaker.inquiry.model.vo.InquiryAnswer;
 import com.kh.bookmaker.inquiry.model.vo.InquiryFile;
-
-
-
-
-
-
-
-
+import com.kh.bookmaker.inquiry.model.vo.InquiryAnswerFile;
 
 @Controller
 public class InquiryController {
@@ -59,6 +52,7 @@ public class InquiryController {
 		
 		System.out.println("list : " + list);
 		
+		/* model.addAttribute("inquiryAnswerNo",inquiryAnswerNo); */
 		model.addAttribute("list", list);
 		model.addAttribute("totalContents", totalContents);
 		model.addAttribute("numPerPage", numPerPage);
@@ -127,16 +121,7 @@ public class InquiryController {
 		return "common/msg";
 	}
 	
-	// 단순 파일 이름 변경용 메소드 
-		public String fileNameChanger(String oldFileName) {
 
-			String ext = oldFileName.substring(oldFileName.lastIndexOf(".") + 1);
-			SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd_HHmmssSSS");
-			int rnd = (int)(Math.random() * 1000);
-
-			return sdf.format(new Date(System.currentTimeMillis())) + "_" + rnd + "." + ext;
-			
-		}
 		
 		
 		@RequestMapping("/inquiry/inquiryView.do")
@@ -345,6 +330,118 @@ public class InquiryController {
 			return "common/msg";
 		}
 		
+		@RequestMapping("/inquiry/inquiryAnswer.do")
+		public void inquiryAnswer() {
+			
+			
+		}
+		
+		
+		
+		/* -----------------문의게시글 답변 -------------*/
+		
+		@RequestMapping("/inquiry/inquiryAnswerok.do")
+		public String inquiryAnswerok(InquiryAnswer inquiryAnswer, Model model, HttpServletRequest req,
+				@RequestParam(value="upFile", required=false) MultipartFile[] upFiles) {
+				
+			System.out.println("asdf : " + inquiryAnswer);
+			
+			
+			String saveDirectory
+		      = req.getServletContext().getRealPath("/resources/inquiryUpload");
+		List<InquiryAnswerFile> inquiryAnswerFile = new ArrayList<InquiryAnswerFile>();
+		
+		/*** MultipartFile 로 파일 업로드 처리하기 ***/
+		for(MultipartFile f : upFiles) {
+			if( f.isEmpty() == false ) { 
+				// 파일이 비어있지 않다면 --> 첨부파일을 추가했다면 다음을 실행해라
+				
+				// 2. 파일명 재생성
+				String originName = f.getOriginalFilename();
+				String changeName = fileNameChanger(originName);
+				
+				try {
+					f.transferTo(new File(saveDirectory + "/" + changeName));
+				} catch (IllegalStateException | IOException e) {
+					e.printStackTrace();
+				}
+				// 3. list에 담기
+				InquiryAnswerFile at = new InquiryAnswerFile();
+				at.setInquiryFilename(originName);
+				at.setRenameFilename(changeName);
+				
+				inquiryAnswerFile.add(at);
+			}
+		}		
+		/*********************************************/
+		
+		// 4. 비즈니스(서비스) 로직 수행
+		
+		int result = inquiryService.inquiryAnswerok(inquiryAnswer, inquiryAnswerFile);
+		
+		// 5. 처리 결과에 따른 view 처리
+		String loc = "/inquiry/inquiryList.do";
+		String msg = "";
+		if( result > 0 ) {
+			msg = "답변 등록 성공";
+		} else {
+			msg = "답변 등록 실패!";
+		}
+		
+		model.addAttribute("loc", loc);
+		model.addAttribute("msg", msg);
+		
+		return "common/msg";
+	}
+		
+		
+		@RequestMapping("/inquiry/answerView.do")
+		public String answerView(@RequestParam int inquiryNo, Model model) {
+			
+			System.out.println("넘어옵니다@@@@@@@@@@@@");
+			
+			InquiryAnswer inquiryAnswer = inquiryService.answerView(inquiryNo);
+			
+			
+			/*
+			 * List<InquiryAnswerFile> inquiryAnswerFileList =
+			 * inquiryService.answerViewfile(inquiryAnswerNo);
+			 */
+			 
+			 
+			
+			model.addAttribute("inquiryAnswer", inquiryAnswer);
+			/* model.addAttribute("inquiryFileList", inquiryFileList); */
+					
+			
+			return "inquiry/answerView";
+		}
+		
+		
+	
+	
+
+		
+		
+		
+
+			
+			
+			
+			
+		
+
+
+// 단순 파일 이름 변경용 메소드 
+public String fileNameChanger(String oldFileName) {
+
+	String ext = oldFileName.substring(oldFileName.lastIndexOf(".") + 1);
+	SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd_HHmmssSSS");
+	int rnd = (int)(Math.random() * 1000);
+
+	return sdf.format(new Date(System.currentTimeMillis())) + "_" + rnd + "." + ext;
+	
+}
 		
 		
 	

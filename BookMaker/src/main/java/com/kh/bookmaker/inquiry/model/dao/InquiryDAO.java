@@ -4,6 +4,8 @@ import java.util.List;
 import java.util.Map;
 
 import com.kh.bookmaker.inquiry.model.vo.Inquiry;
+import com.kh.bookmaker.inquiry.model.vo.InquiryAnswer;
+import com.kh.bookmaker.inquiry.model.vo.InquiryAnswerFile;
 import com.kh.bookmaker.inquiry.model.vo.InquiryFile;
 
 public interface InquiryDAO {
@@ -35,7 +37,14 @@ public interface InquiryDAO {
 	Inquiry updateView(int inquiryNo);
 	
 	int updateInquiry(Inquiry inquiry, List<InquiryFile> inquiryfile);
+
+	int inquiryAnswerok(InquiryAnswer inquiryAnswer);
+
+	int inquiryAnswerFile(InquiryAnswerFile a);
 	
+	InquiryAnswer answerView(int inquiryNo);
+
+	/* List<InquiryFile> answerViewfile(String memberId); */
 	
 	
 	

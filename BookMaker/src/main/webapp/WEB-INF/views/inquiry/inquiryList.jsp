@@ -12,6 +12,72 @@
 	<style>
 		/*글쓰기버튼*/
 		input#btn-add{float:right; margin: 0 0 15px;}
+		
+		
+		* {
+
+	font-family: 'Malgun gothic','Sans-Serif','Arial';
+}
+
+ul li {
+	list-style:none;
+}
+
+
+.list-table tbody td{
+	text-align:center;
+	padding:100px 0;
+	border-bottom:1px solid #CCC; height:20px;
+	font-size: 140px 
+}
+#btn-add {
+	text-decoration: none;
+	font-size: 20px;
+	font-weight: bold;
+	color:gray;
+	border-width:medium;
+	border-color: graytext;
+	
+}
+
+#aa{
+
+	text-decoration: none;
+	font-size: 20px;
+	font-weight: bold;
+	color:gray;
+	border-width:medium;
+	border-color: graytext;
+}
+
+.bb{
+	text-decoration: none;
+	font-size: 20px;
+	font-weight: bold;
+	color:gray;
+	border-width:thick;
+	border-color: blue;
+	
+	border-top:2px solid #09C;
+	border-bottom:2px solid #09C;
+
+}
+
+.cc{
+
+	text-decoration: none;
+	font-size: 20px;
+	font-weight: normal;
+	color:gray;
+	border-width:thick;
+	border-color: aqua;
+	
+	
+	border-bottom:2px solid ;
+
+
+}
+
 	</style>
 	
 </head>
@@ -19,10 +85,11 @@
 	<div id="container">
 		<c:import url="../common/menubar.jsp"/>
 			<section id="inquiry-container" class="container">
-				<p>총 ${totalContents }건의 게시물이 있습니다.</p>
+				<p id="aa">총 ${totalContents }건의 게시물이 있습니다.</p>
 				<input type="button" value="글쓰기" id="btn-add" class="btn btn-outline-success" onclick="fn_goInquiryForm();"/>
 				<table id="tbl-inquiry" class="table table-striped table-hover">
-					<tr>
+			
+					<tr class="bb">
 						<th>번호</th>
 						<th>제목</th>
 						<th>작성자</th>
@@ -30,10 +97,13 @@
 						<th>작성일</th>
 						<th>첨부파일</th>
 						<th>조회수</th>
+						<th>답변확인</th>
 					
 					</tr>
+			
+		
 					<c:forEach items="${list}" var="b"> 
-					<tr id="${b.inquiryNo}">
+					<tr id="${b.inquiryNo}" class="cc">
 						<td>${b.inquiryNo}</td>
 						<td>${b.inquiryTitle}</td>
 						<td>${b.memberId}</td>
@@ -51,8 +121,10 @@
 							</c:if>
 						</td>
 						<td>${b.inquiryReadCount} </td>
+						<%-- <td><c:if test="${b.inquiryNo eq inquiryAnswerNo}">확인</c:if></td> --%>
 					</tr>
 					</c:forEach>
+			
 				</table>
 				<c:out value="${pageBar}" escapeXml="false"/>
 			</section> 
@@ -70,6 +142,10 @@
 					location.href = "${pageContext.request.contextPath}/inquiry/inquiryView.do?no="+inquiryNo;
 				});
 			});
+
+			//클릭시 상세보기 하는데 거기에 답변도 가져오게하는 시작점(클릭시 답변no는 해당 id 에 없으니 멤버id를 가져와서 답변no를 끄집어 낼 것이다 )
+		
+			
 		</script>
 	</div>
 </body>

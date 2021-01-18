@@ -193,4 +193,13 @@ public class MemberController {
 				
 		return map;
 	}
+	
+	
+	
+	@RequestMapping("member/memberloginform.do")
+	public void memberloginform() {
+	}
+	
+	
+
 }

@@ -94,7 +94,7 @@ color : gray;
       <ul class="menu" >
         <div><li><a href="#content1"> 배송관련 </a></li></div>
         <div><li><a href="#content2"> 결제관련 </a></li></div>
-        <div><li><a href="#content3"> 반품/환불관련 </a></li></div>
+        <div><li><a href="#content3"> 반품/환불 </a></li></div>
     </ul>
     
     <div class="content">

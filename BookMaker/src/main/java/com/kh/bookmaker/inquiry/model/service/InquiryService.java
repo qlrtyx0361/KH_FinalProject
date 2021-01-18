@@ -4,6 +4,8 @@ import java.util.List;
 import java.util.Map;
 
 import com.kh.bookmaker.inquiry.model.vo.Inquiry;
+import com.kh.bookmaker.inquiry.model.vo.InquiryAnswer;
+import com.kh.bookmaker.inquiry.model.vo.InquiryAnswerFile;
 import com.kh.bookmaker.inquiry.model.vo.InquiryFile;
 
 
@@ -26,4 +28,12 @@ public interface InquiryService {
 	int deleteInquiry(int inquiryNo);
 
 	int deleteFile(int attNo);
+	
+	int inquiryAnswerok(InquiryAnswer inquiryAnswer, List<InquiryAnswerFile> inquiryAnswerFile);
+	
+	InquiryAnswer answerView(int inquiryNo);
+	
+	/* List<InquiryFile> answerViewfile(String memberId); */
+	
+	
 }

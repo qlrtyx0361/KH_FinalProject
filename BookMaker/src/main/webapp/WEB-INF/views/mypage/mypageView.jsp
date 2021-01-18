@@ -9,49 +9,182 @@
 	<meta charset="UTF-8">
 	<title>마이페이지</title>
 	<c:import url="../common/header.jsp"/>
-	<style>
-		div#update-container{width:400px; margin:0 auto; text-align:center;}
-		div#update-container input, div#update-container select {margin-bottom:10px;}
-	</style>
 	
-<div class="header">
-	<div class="container-fluid px-md-5  pt-4 pt-md-5">
-		<div class="row justify-content-between">
-			<div class="col-md-8 order-md-last">
-				<div class="row">
-					<div class="col-md-6 text-center">
-					<div class="col-md-6 d-md-flex justify-content-end mb-md-0 mb-3">
-					</div>
-					</div>
-					</div>
-					</div>
-					</div>
-					</div>
-					</div>
-					
-		</head>
+	
+	
+	
+	
+	<style>
+	.container{
+	width: 500px;
+	height: 800px;
+	border: 1px solid lightgray;
+	margin: 50px auto;
+	position: relative;
+	
+	}
+	
+	.pink-box {
+	
+	
+	height: 500px;
+	background-color: silver;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	padding: 10 100px;
+	
+	
+	}
+	
+	.line {
+	margin-bottom: 10px;
+	color: white;
+	
+	
+	}
+	
+	.white-box {
+	
+	height: 300px;
+	
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content:space-around;
+	padding: 0 100px;
+	}
+	
+	/* ----------------- */
+	
+	
+	.profile-message {
+	text-align: center;
+	color: white;
+	
+	
+	}
+	
+	.image{
+	width: 300px;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	font-size: 10pt;
+	}
+	
+	.icon {
+	
+	width: 40px;
+	height: 40px;
+	
+	}
+	
+	
+	.chat-icon {
+	
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content:center;
+	
+	}
+	
+	.profile-icon {
+	
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content:center;
+	
+	}
+	
+	.qutate-icon {
+	
+	display: flex;
+	flex-direction: column;
+	
+	justify-content:center;
+	
+	}
+	
+	.photo1 {
+	width: 100px;
+	height: 100px;
+	top:450px;
+	left: 190px;
+	object-fit: cover;
+	border-radius: 50%;
+	position: absolute;
+	}
+	
+	h6{
+	color:black;
+	font-weight: bold;
+	
+	}
+	
+
+
+
+</style>
+	
+</head>
 				
+	
+	<body>
+		
+		<div class="container">
+		<div class="pink-box">
+		<div class="line">_______</div>
+		<div class="profile-message">
+		<h1>My Pageh</h1>
+		
+		</div>
+		</div>
+		<img 
+		class="photo1"
+		src="../resources/images/default-user.png" 
+		alt="profile image"/>
+		<h6>${member.name}님 의 마이페이지</h6>
+		
+		<div class="white-box" >
+		<h3></h3>
+		
+		<div class="image">
+		<div class="chat-icon" >
+		<img class="icon"src="../resources/images/색상1.PNG" alt="chat" />
+		<a href="${pageContext.request.contextPath}/mypage/mypageprof.do?memberId=${member.memberId}"><h4>프로필 관리</h4></a>
+		</div>
+		
+		
+		<div class="profile-icon">
+		<img class="icon" src="../resources/images/색상2.PNG" alt="Profile" />
+		<a href="${pageContext.request.contextPath}/mypage/mypageinquiry.do?memberId=${member.memberId}"><h4>1대1문의 게시판</h4></a>
+		</div>
+		
+		
+		<div claa="qutate-icon">
+			<img class="icon" src="../resources/images/색상3.PNG" alt="Qutation" />
+			<h4>결제 장바구니</h4>
+		</div>
+		</div>
+			</div>
+				</div>
 				
-		<body>
-		<!-- 프로필 -->
-		     <div>
-		       		
-		     <span><a class="btn btn-outline-success my-2 my-sm-0" href="${pageContext.request.contextPath}/mypage/mypageprof.do?memberId=${member.memberId}" >${member.name}님, 의 프로필 보기</a></span>&nbsp;
-		     	 		
-		     </div>
-		     
-		<!-- 게시글 문의 -->
-		          <div>
-		       		
-		     <span><a class="btn btn-outline-success my-2 my-sm-0" href="${pageContext.request.contextPath}/mypage/mypageinquiry.do?memberId=${member.memberId}" >${member.name}님, 의 문의 게시판 보기</a></span>&nbsp;
-		     	 		
-		     </div>
-		     	       
-		     	    
+				</body>
+			
 		       		   
-		    	
+		    
 		    		  
-		      <c:import url="../common/footer.jsp"/>
+	
+	
+		
+	    
+	      
+		      
+		      
 <hr>
 ------------------------
 <button onclick="payNow();"> 결제 버튼</button>
@@ -100,9 +233,12 @@ function payNow() {
         }
     });
 }
+
+
+
 </script> 
 
-</body>
+
 </html>
 		  		     
 		  		    

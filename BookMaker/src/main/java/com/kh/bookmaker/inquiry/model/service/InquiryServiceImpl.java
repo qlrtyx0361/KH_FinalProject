@@ -14,6 +14,8 @@ import com.kh.bookmaker.inquiry.model.dao.InquiryDAO;
 import com.kh.bookmaker.inquiry.model.vo.InquiryFile;
 
 import com.kh.bookmaker.inquiry.model.vo.Inquiry;
+import com.kh.bookmaker.inquiry.model.vo.InquiryAnswer;
+import com.kh.bookmaker.inquiry.model.vo.InquiryAnswerFile;
 
 
 @Service
@@ -118,6 +120,37 @@ public class InquiryServiceImpl implements InquiryService {
 		// TODO Auto-generated method stub
 		return 0;
 	}
+
+
+
+	@Override
+	public InquiryAnswer answerView(int inquiryNo) {
+		
+		return inquiryDAO.answerView(inquiryNo);
+	}
+
+	@Override
+	public int inquiryAnswerok(InquiryAnswer inquiryAnswer, List<InquiryAnswerFile> inquiryAnswerFile) {
+int result1 = inquiryDAO.inquiryAnswerok(inquiryAnswer);
+		
+		if( result1 == 0 ) throw new InquiryException();
+	
+		
+		if(inquiryAnswerFile.size() > 0) { // 게시글의 첨부파일이 있다면 실행해라!
+			for(InquiryAnswerFile a : inquiryAnswerFile) {
+				int result2 = inquiryDAO.inquiryAnswerFile(a); // 있다면 그 게시물을 dao 에게 보내라 
+				if( result2 == 0 ) throw new InquiryException("첨부파일 추가 실패!");
+			}
+		}
+		
+		return result1;
+	}
+
+	/*
+	 * @Override public List<InquiryFile> answerViewfile(String memberId) {
+	 * 
+	 * return inquiryDAO.answerViewfile(memberId); }
+	 */
 
 
 
