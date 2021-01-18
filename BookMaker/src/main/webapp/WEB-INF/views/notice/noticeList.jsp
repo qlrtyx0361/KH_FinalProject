@@ -22,7 +22,9 @@
 	
 	<section class="container">
 		<article>
+			<c:if test="${member.memberType eq 'STAFF'}">
 			<button class="btn btn-primary btn-lg float-right" id="btnNewNotice">공지 등록</button><br/><br/>
+			</c:if>
 			
 			<table class="table">
 				<thead class="thead-light">

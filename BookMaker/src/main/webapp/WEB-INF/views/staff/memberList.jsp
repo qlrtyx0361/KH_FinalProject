@@ -56,7 +56,6 @@
 	
 	<script>
 		$(function() {
-			alert('1234');
 			$('tr[id]').each(function() {
 				$(this).children().eq(1).on("click", function(){
 					var memberNo = $(this).parent().attr("id");
