@@ -21,7 +21,21 @@
 </br></br>
 
 # Tech Stack #
-![](https://github.com/qlrtyx0361/KH_FinalProject/blob/master/SWAT.PNG)
+![](https://github.com/qlrtyx0361/KH_FinalProject/blob/master/tool.PNG)
+</br>
+### - 사용 언어 : JAVA, JavaScript, Ajax
+### - 툴 : Spring, Oracle, SQLDeveloper
+### - 서버 : apache Tomcat , JSP
+### - 홈페이지는 HTML기반이며 디자인은 css
+### - 라이브러리 : Jquery, myBaits, Maven
+### - 형상관리 : github
+
+
+</br></br>
+## 게시글 작성 시연입니다.
+
+![게시글작성](https://user-images.githubusercontent.com/53084458/82656301-7c085080-9c5e-11ea-9ac4-e07c08394f8c.gif)
+
 
 
 You can also:
