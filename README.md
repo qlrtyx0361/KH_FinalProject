@@ -48,25 +48,39 @@
 </br></br>
 ## 회원가입 작성 시연입니다.
 
-</br>
 ![ezgif com-gif-maker (1)](https://user-images.githubusercontent.com/73675217/105887250-d14afc00-604e-11eb-84aa-6526ba8428db.gif)
 
+#
+
+
 ## 도서 등록 작성 시연입니다.
-</br>
+
 ![ezgif com-gif-maker](https://user-images.githubusercontent.com/73675217/105887293-e1fb7200-604e-11eb-97f4-7a4018ac411d.gif)
 
-## 문의 게시판 작성 시연입니다.
-</br>
+#
+
+
+## 문의 게시판 시연입니다.
+
 ![inquiry](https://user-images.githubusercontent.com/73675217/105887305-e6c02600-604e-11eb-8c3b-e1f4fe40f9c1.gif)
 
-## MyPage 작성 시연입니다.
-</br>
+#
+
+
+## My Page 시연입니다.
+
 ![mypage](https://user-images.githubusercontent.com/73675217/105887314-eaec4380-604e-11eb-9843-1f94796bb1b9.gif)
 
+#
 
 
 
 
+## 수정, 삭제 시연입니다.
+
+![inquiry](https://user-images.githubusercontent.com/73675217/105887305-e6c02600-604e-11eb-8c3b-e1f4fe40f9c1.gif)
+
+#
 
 
 
