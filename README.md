@@ -29,7 +29,11 @@
 ### - 홈페이지는 HTML기반이며 디자인은 css
 ### - 라이브러리 : Jquery, myBaits, Maven
 ### - 형상관리 : github
+</br></br>
 
+# ERD_DB #
+
+![ERD1](https://user-images.githubusercontent.com/73675217/105877437-57f9dc00-6043-11eb-9dc8-f8331436273f.png)
 
 </br></br>
 ## 게시글 작성 시연입니다.
