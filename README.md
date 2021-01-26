@@ -11,10 +11,11 @@
       기존의 방식보다 효율적인 도서판매사이트를        
       만들고자 함.
       
-  * ![SWOT 분석](https://user-images.githubusercontent.com/53084458/82660573-    9265da80-9c65-11ea-9fec-b4365a025c15.jpg)
+  * ![SWOT 분석](https://github.com/qlrtyx0361/KH_FinalProject/blob/master/SWAT.PNG)
 
 
-# 사용한 
+
+# 
 
   - Import a HTML file and watch it magically convert to Markdown
   - Drag and drop images (requires your Dropbox account be linked)
