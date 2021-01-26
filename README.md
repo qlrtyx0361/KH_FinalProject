@@ -47,6 +47,7 @@
 
 </br></br>
 ## 회원가입 작성 시연입니다.
+
 </br>
 ![ezgif com-gif-maker (1)](https://user-images.githubusercontent.com/73675217/105887250-d14afc00-604e-11eb-84aa-6526ba8428db.gif)
 
