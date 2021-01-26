@@ -1,16 +1,20 @@
-# Dillinger
+# Final Project
 
-[![N|Solid](https://cldup.com/dTxpPi9lDf.thumb.png)](https://nodesource.com/products/nsolid)
+### KH정보교육원 수료 ###
+### 작성자 : 이진솔 ###
+### 교육기간 2020년 07월 16일 ~ 2021년 01월 18일 ### 
 
-[![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://travis-ci.org/joemccann/dillinger)
+# 온라인 도서 사이트 개발 #
 
-Dillinger is a cloud-enabled, mobile-ready, offline-storage, AngularJS powered HTML5 Markdown editor.
+  * 기획의도
+    * 언택트시대에 온라인도서의 비중이 늘면서 
+      기존의 방식보다 효율적인 도서판매사이트를        
+      만들고자 함.
+      
+  * ![SWOT 분석](https://user-images.githubusercontent.com/53084458/82660573-    9265da80-9c65-11ea-9fec-b4365a025c15.jpg)
 
-  - Type some Markdown on the left
-  - See HTML in the right
-  - Magic
 
-# New Features!
+# 사용한 
 
   - Import a HTML file and watch it magically convert to Markdown
   - Drag and drop images (requires your Dropbox account be linked)
