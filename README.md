@@ -4,6 +4,9 @@
 ### 작성자 : 이진솔 ###
 ### 교육기간 2020년 07월 16일 ~ 2021년 01월 18일 ### 
 
+
+</br></br>
+</br></br>
 # 온라인 도서 사이트 개발 #
 
   * 기획의도
@@ -11,14 +14,13 @@
       기존의 방식보다 효율적인 도서판매사이트를        
       만들고자 함.
       
-  * ![SWOT 분석](https://github.com/qlrtyx0361/KH_FinalProject/blob/master/SWAT.PNG)
+   ![SWOT 분석](https://github.com/qlrtyx0361/KH_FinalProject/blob/master/SWAT.PNG)
 
 
 
-# ![개발일정](https://github.com/qlrtyx0361/KH_FinalProject/blob/master/SWAT.PNG)
+# ![개발일정](https://github.com/qlrtyx0361/KH_FinalProject/blob/master/DATE.PNG)
 
-  - Import a HTML file and watch it magically convert to Markdown
-  - Drag and drop images (requires your Dropbox account be linked)
+# Tech Stack #
 
 
 You can also:
