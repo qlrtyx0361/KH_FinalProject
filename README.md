@@ -33,13 +33,13 @@
 
 # ERD_DB #
 
-![ERD1](https://user-images.githubusercontent.com/73675217/105877437-57f9dc00-6043-11eb-9dc8-f8331436273f.gif)
+![ERD1](https://user-images.githubusercontent.com/73675217/105877437-57f9dc00-6043-11eb-9dc8-f8331436273f.png)
 
-![image](https://user-images.githubusercontent.com/73675217/105878696-a65baa80-6044-11eb-9ad6-fbd72b4cf7cc.gif)
+![image](https://user-images.githubusercontent.com/73675217/105878696-a65baa80-6044-11eb-9ad6-fbd72b4cf7cc.png)
 
-![image](https://user-images.githubusercontent.com/73675217/105878862-d4d98580-6044-11eb-8dd4-65642272b21b.gif)
+![image](https://user-images.githubusercontent.com/73675217/105878862-d4d98580-6044-11eb-8dd4-65642272b21b.png)
 
-![image](https://user-images.githubusercontent.com/73675217/105878912-e4f16500-6044-11eb-9b5d-b93f705b8597.gif)
+![image](https://user-images.githubusercontent.com/73675217/105878912-e4f16500-6044-11eb-9b5d-b93f705b8597.png)
 
 
 
@@ -48,19 +48,29 @@
 </br></br>
 ## 회원가입 작성 시연입니다.
 </br>
-![회원가입](https://user-images.githubusercontent.com/73675217/105881170-85488900-6047-11eb-80de-5febd79bf71d.gif)
+![ezgif com-gif-maker (1)](https://user-images.githubusercontent.com/73675217/105887250-d14afc00-604e-11eb-84aa-6526ba8428db.gif)
 
 ## 도서 등록 작성 시연입니다.
 </br>
-![도서등록](https://user-images.githubusercontent.com/73675217/105883651-6e576600-604a-11eb-89b7-c99685a24c3a.gif)
+![ezgif com-gif-maker](https://user-images.githubusercontent.com/73675217/105887293-e1fb7200-604e-11eb-97f4-7a4018ac411d.gif)
 
 ## 문의 게시판 작성 시연입니다.
 </br>
-![문의게시판](https://user-images.githubusercontent.com/73675217/105883681-77e0ce00-604a-11eb-9772-e67966c666a4.gif)
+![inquiry](https://user-images.githubusercontent.com/73675217/105887305-e6c02600-604e-11eb-8c3b-e1f4fe40f9c1.gif)
 
 ## MyPage 작성 시연입니다.
 </br>
-![마이페이지](https://user-images.githubusercontent.com/73675217/105884766-a7dca100-604b-11eb-9219-212fae71ebde.gif)
+![mypage](https://user-images.githubusercontent.com/73675217/105887314-eaec4380-604e-11eb-9843-1f94796bb1b9.gif)
+
+
+
+
+
+
+
+
+
+
 
 
 
