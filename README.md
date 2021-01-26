@@ -35,6 +35,12 @@
 
 ![ERD1](https://user-images.githubusercontent.com/73675217/105877437-57f9dc00-6043-11eb-9dc8-f8331436273f.png)
 
+![image](https://user-images.githubusercontent.com/73675217/105878696-a65baa80-6044-11eb-9ad6-fbd72b4cf7cc.png)
+
+![image](https://user-images.githubusercontent.com/73675217/105878862-d4d98580-6044-11eb-8dd4-65642272b21b.png)
+
+![image](https://user-images.githubusercontent.com/73675217/105878912-e4f16500-6044-11eb-9b5d-b93f705b8597.png)
+
 </br></br>
 ## 게시글 작성 시연입니다.
 
