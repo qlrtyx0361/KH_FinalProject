@@ -33,13 +33,17 @@
 
 # ERD_DB #
 
-![ERD1](https://user-images.githubusercontent.com/73675217/105877437-57f9dc00-6043-11eb-9dc8-f8331436273f.png)
+![ERD1](https://user-images.githubusercontent.com/73675217/105877437-57f9dc00-6043-11eb-9dc8-f8331436273f.gif)
 
-![image](https://user-images.githubusercontent.com/73675217/105878696-a65baa80-6044-11eb-9ad6-fbd72b4cf7cc.png)
+![image](https://user-images.githubusercontent.com/73675217/105878696-a65baa80-6044-11eb-9ad6-fbd72b4cf7cc.gif)
 
-![image](https://user-images.githubusercontent.com/73675217/105878862-d4d98580-6044-11eb-8dd4-65642272b21b.png)
+![image](https://user-images.githubusercontent.com/73675217/105878862-d4d98580-6044-11eb-8dd4-65642272b21b.gif)
 
 ![image](https://user-images.githubusercontent.com/73675217/105878912-e4f16500-6044-11eb-9b5d-b93f705b8597.png)
+
+![게시글수정삭제](https://user-images.githubusercontent.com/53084458/82644845-f62fd980-9c4c-11ea-80bd-0bc262bca87e.gif)
+
+
 
 </br></br>
 ## 회원가입 작성 시연입니다.
