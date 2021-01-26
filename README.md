@@ -39,9 +39,9 @@
 
 ![image](https://user-images.githubusercontent.com/73675217/105878862-d4d98580-6044-11eb-8dd4-65642272b21b.gif)
 
-![image](https://user-images.githubusercontent.com/73675217/105878912-e4f16500-6044-11eb-9b5d-b93f705b8597.png)
+![image](https://user-images.githubusercontent.com/73675217/105878912-e4f16500-6044-11eb-9b5d-b93f705b8597.gif)
 
-![게시글수정삭제](https://user-images.githubusercontent.com/53084458/82644845-f62fd980-9c4c-11ea-80bd-0bc262bca87e.gif)
+
 
 
 
