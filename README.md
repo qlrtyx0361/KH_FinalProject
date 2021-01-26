@@ -42,10 +42,21 @@
 ![image](https://user-images.githubusercontent.com/73675217/105878912-e4f16500-6044-11eb-9b5d-b93f705b8597.png)
 
 </br></br>
-## 게시글 작성 시연입니다.
+## 회원가입 작성 시연입니다.
+</br>
+![ezgif com-gif-maker (1)](https://user-images.githubusercontent.com/73675217/105881170-85488900-6047-11eb-80de-5febd79bf71d.gif)
 
-![게시글작성](https://user-images.githubusercontent.com/53084458/82656301-7c085080-9c5e-11ea-9ac4-e07c08394f8c.gif)
+## 도서 등록 작성 시연입니다.
+</br>
+![ezgif com-gif-maker](https://user-images.githubusercontent.com/73675217/105883651-6e576600-604a-11eb-89b7-c99685a24c3a.gif)
 
+## 문의 게시글 작성 시연입니다.
+</br>
+![ezgif com-gif-maker (1)](https://user-images.githubusercontent.com/73675217/105883681-77e0ce00-604a-11eb-9772-e67966c666a4.gif)
+
+## MyPage 작성 시연입니다.
+</br>
+![mypage](https://user-images.githubusercontent.com/73675217/105884766-a7dca100-604b-11eb-9219-212fae71ebde.gif)
 
 
 You can also:
