@@ -77,7 +77,7 @@
 
 
 
-		//아이디 중복검사 이벤트 추가 
+	//아이디 중복검사 이벤트 추가 
 	$("#memberId").on("keyup", function(){
 			        var userId = $(this).val().trim();
 			        
@@ -128,7 +128,7 @@
 #
 
 
-    // MultipartFile 로 파일 업로드 처리하기 
+   		// MultipartFile 로 파일 업로드 처리하기 
 		for(MultipartFile f : upFiles) {
 			if( f.isEmpty() == false ) { 
 				// 파일이 비어있지 않다면 --> 첨부파일을 추가했다면 다음을 실행해라
@@ -160,7 +160,7 @@
 #
 
 
-     // 게시글 페이지 설정 ( mypage-mapper.xml )
+        // 게시글 페이지 설정 ( mypage-mapper.xml )
  	<select id="selectmypageList" resultType="Inquiry">
 		SELECT A.*, 
 		(SELECT COUNT(*) FROM INQUIRYFILE WHERE INQUIRYNO = A.INQUIRYNO) FILECOUNT
@@ -184,7 +184,7 @@
 
 
 
-</br></br>
+</br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br>
 ![image](https://user-images.githubusercontent.com/73675217/105886568-e5dac480-604d-11eb-9519-cc9c7d1a9133.png)
 
 
