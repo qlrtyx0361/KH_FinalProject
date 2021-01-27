@@ -53,6 +53,67 @@
 #
 
 
+
+	//블로우피쉬 암호문 사용
+	@RequestMapping("/member/memberEnrollEnd.do")
+	public String memberEnrollEnd(Member member, Model model,
+			@RequestParam("birthDay") String[] birthDay){
+
+		Date birth = Date.valueOf(String.join("-", birthDay));
+		member.setBirth(birth);
+		
+		
+		String plainPassword = member.getPassword();
+
+		String encryptPassword = bcryptPasswordEncoder.encode(plainPassword);
+
+		System.out.println("원문 : " + plainPassword);
+		System.out.println("암호문 : " + encryptPassword);
+
+		member.setPassword(encryptPassword);
+
+</br>
+
+
+
+
+		//아이디 중복검사 이벤트 추가 
+	$("#memberId").on("keyup", function(){
+			        var userId = $(this).val().trim();
+			        
+			        if(userId.length<4) {
+			        	$(".guide.error").hide();
+			        	$(".guide.ok").hide();
+			        	$(".guide.invalid").show();
+			        	return;
+			        	
+			        } else {
+			        	
+				        $.ajax({
+				            url  : "${pageContext.request.contextPath}/member/checkIdDuplicate.do",
+				            data : {memberId:userId},
+				            dataType: "json",
+				            success : function(data){
+				                console.log(data);
+				                // if(data=="true") //stream 방식
+				                if(data.isUsable==true){ //viewName 방식
+				                    $(".guide.error").hide();
+				                    $(".guide.invalid").hide();
+				                    $(".guide.ok").show();
+				                    $("#idDuplicateCheck").val(1);
+				                } else {
+				                    $(".guide.error").show();
+				                    $(".guide.invalid").hide();
+				                    $(".guide.ok").hide();
+				                    $("#idDuplicateCheck").val(0);
+				                }
+				            }, error : function(jqxhr, textStatus, errorThrown){
+				                console.log("ajax 처리 실패");
+
+
+
+
+
 ## 도서 등록 작성 시연입니다.
 
 ![ezgif com-gif-maker](https://user-images.githubusercontent.com/73675217/105887293-e1fb7200-604e-11eb-97f4-7a4018ac411d.gif)
@@ -67,11 +128,45 @@
 #
 
 
+    // MultipartFile 로 파일 업로드 처리하기 
+		for(MultipartFile f : upFiles) {
+			if( f.isEmpty() == false ) { 
+				// 파일이 비어있지 않다면 --> 첨부파일을 추가했다면 다음을 실행해라
+				
+				// 2. 파일명 재생성
+				String originName = f.getOriginalFilename();
+				String changeName = fileNameChanger(originName);
+				
+				try {
+					f.transferTo(new File(saveDirectory + "/" + changeName));
+				} catch (IllegalStateException | IOException e) {
+					e.printStackTrace();
+				}
+				// 3. list에 담기
+				InquiryFile at = new InquiryFile();
+				at.setInquiryFilename(originName);
+				at.setRenameFilename(changeName);
+				
+				inquiryFile.add(at);
+			}
+		}
+
+
+
 ## My Page 시연입니다.
 
 ![mypage](https://user-images.githubusercontent.com/73675217/105887314-eaec4380-604e-11eb-9843-1f94796bb1b9.gif)
 
 #
+
+
+     // 게시글 페이지 설정 ( mypage-mapper.xml )
+ 	<select id="selectmypageList" resultType="Inquiry">
+		SELECT A.*, 
+		(SELECT COUNT(*) FROM INQUIRYFILE WHERE INQUIRYNO = A.INQUIRYNO) FILECOUNT
+		FROM INQUIRY A
+		WHERE MEMBERID = #{memberId}
+		ORDER BY UPLOADDATE DESC, INQUIRYNO DESC
 
 
 
