@@ -184,8 +184,12 @@
 
 
 
-</br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br>
-![image](https://user-images.githubusercontent.com/73675217/105886568-e5dac480-604d-11eb-9519-cc9c7d1a9133.png)
+</br></br></br></br></br></br></br></br>
 
+# 이상입니다.
+
+![ezgif com-gif-maker](https://user-images.githubusercontent.com/73675217/106155320-e2694980-61c3-11eb-9117-0a9afad65e5b.gif)
+
+#
 
 
