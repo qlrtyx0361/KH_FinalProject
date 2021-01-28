@@ -113,14 +113,14 @@
 
 
 
-
+</br></br>
 ## 도서 등록 작성 시연입니다.
 
 ![ezgif com-gif-maker](https://user-images.githubusercontent.com/73675217/105887293-e1fb7200-604e-11eb-97f4-7a4018ac411d.gif)
 
 #
 
-
+</br></br>
 ## 문의 게시판 시연입니다.
 
 ![inquiry](https://user-images.githubusercontent.com/73675217/105887305-e6c02600-604e-11eb-8c3b-e1f4fe40f9c1.gif)
@@ -152,7 +152,7 @@
 		}
 
 
-
+</br></br>
 ## My Page 시연입니다.
 
 ![mypage](https://user-images.githubusercontent.com/73675217/105887314-eaec4380-604e-11eb-9843-1f94796bb1b9.gif)
@@ -170,7 +170,7 @@
 
 
 
-
+</br></br>
 ## 수정, 삭제 시연입니다.
 
 ![inquiry](https://user-images.githubusercontent.com/73675217/105887305-e6c02600-604e-11eb-8c3b-e1f4fe40f9c1.gif)
@@ -184,7 +184,7 @@
 
 
 
-</br></br></br></br></br></br></br></br>
+</br></br></br></br></br></br></br></br></br></br>
 
 # 이상입니다.
 
